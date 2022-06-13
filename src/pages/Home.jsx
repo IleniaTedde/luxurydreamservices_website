@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
- function Home({slug}) {
+ function Home({slug, baseUrl}) {
   const [data,setData] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:8000/${slug}`)
+        fetch(`${baseUrl}/${slug}`)
         .then(res => {
             return res.json();
         })

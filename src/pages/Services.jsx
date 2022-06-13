@@ -1,9 +1,9 @@
 
 import { useEffect, useState } from "react";
-const Services = ({ slug }) => {
+const Services = ({ slug, baseUrl }) => {
     const [data, setData] = useState(null);
     useEffect(() => {
-        fetch(`http://localhost:8000/${slug}`)
+        fetch(`${baseUrl}/${slug}`)
             .then(res => {
                 return res.json();
             })

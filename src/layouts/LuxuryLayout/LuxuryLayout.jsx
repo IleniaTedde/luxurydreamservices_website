@@ -3,10 +3,10 @@ import Footer from "../../components/Footer/Footer";
 import styles from "./LuxuryLayout.module.scss";
 import React, {useState, useEffect} from "react";
 
-const LuxuryLayout = ({children}) => {
+const LuxuryLayout = ({children, baseUrl}) => {
     const [data, setData] = useState(null);
     useEffect(() => {
-        fetch(`http://localhost:8000/layout`)
+        fetch(`${baseUrl}/layout`)
             .then(res => {
                 return res.json();
             })
