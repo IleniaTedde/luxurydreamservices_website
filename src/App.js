@@ -1,15 +1,24 @@
 
-import './App.css';
+import './App.scss';
+import Services from './pages/Services';
+import Home from './pages/Home';
+import LuxuryLayout from './layouts/LuxuryLayout/LuxuryLayout';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
   return (
-    <>
-      <header className="App-header"> HEADER </header>
-        <div className="content">
-        luxuryDreamService_website
-        </div>
-        <footer className="App-footer">FOOTER</footer>
-        </>
+    <Router>
+       <LuxuryLayout> 
+          <Switch>
+            <Route exact path="/">
+            <Home slug={"home"}/>
+            </Route>
+            <Route exact path="/services">
+              <Services slug={"services"}/>
+            </Route>
+          </Switch>
+       </LuxuryLayout> 
+    </Router>
   );
 }
 

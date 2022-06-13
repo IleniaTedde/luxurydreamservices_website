@@ -1,0 +1,83 @@
+@use "sass:map";
+
+// Colors
+$theme-colors: (
+    "dark-blue": #151722,
+    "gold": #84754E,
+    "grey": #E9E9E9,
+    "light-black": #191C25,
+    "light": #ffffff,
+);
+
+// GRADIENTS
+$blue-bg: linear-gradient(to top, #081128 85%, transparent 100%);
+
+$blue-gradient: (
+    "first": #081127,
+    "middle": #083d58,
+    "last": #0c254b,
+);
+
+$latest-gradient: (
+    "first": rgba(8, 17, 40, 0),
+    "last": #081128,
+);
+
+
+
+// Fonts
+//
+// Poppis
+
+$poppins-font-family: "Poppins", sans-serif;
+$poppins-fw-light: 300;
+$poppins-fw-medium: 500;
+$poppins-fw-bold: 700;
+
+@mixin poppins-light {
+    font-family: $poppins-font-family;
+    font-weight: $poppins-fw-light;
+}
+
+@mixin poppins-medium {
+    font-family: $poppins-font-family;
+    font-weight: $poppins-fw-medium;
+}
+
+@mixin poppins-bold {
+    font-family: $poppins-font-family;
+    font-weight: $poppins-fw-bold;
+}
+
+// Open Sans
+$opensans-font-family: "Open Sans", sans-serif;
+$opensans-fw-light: 300;
+$opensans-fw-regular: 400;
+$opensans-fw-medium: 500;
+$opensans-fw-semi-bold: 600;
+$opensans-fw-bold: 700;
+
+@mixin open-light {
+    font-family: $opensans-font-family;
+    font-weight: $opensans-fw-light;
+}
+
+@mixin open-regular {
+    font-family: $opensans-font-family;
+    font-weight: $opensans-fw-regular;
+}
+
+@mixin open-medium {
+    font-family: $opensans-font-family;
+    font-weight: $opensans-fw-medium;
+}
+
+@mixin open-semi-bold {
+    font-family: $opensans-font-family;
+    font-weight: $opensans-fw-semi-bold;
+}
+
+@mixin open-bold {
+    font-family: $opensans-font-family;
+    font-weight: $opensans-fw-bold;
+}

@@ -1,0 +1,11 @@
+@import "_common";
+@import "_breakpoints";
+@import "_media_queries";
+@import "_variables";
+
+body,
+html,
+#__next {
+    margin: 0;
+    height: 100%;
+}

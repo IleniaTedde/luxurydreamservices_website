@@ -1,0 +1,18 @@
+
+  { 
+    "layout" : {
+      "header": {
+        "link": [
+          "home", "services"
+           ]
+      },
+      "footer": "footer"
+    },
+
+    "home": {
+        "text" :  "luxuryDreamService_website"
+        },
+    "services": {
+            "text" :  "services page"
+            }
+  }
