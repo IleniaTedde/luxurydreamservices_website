@@ -17,13 +17,16 @@ const LuxuryLayout = ({children}) => {
 
 
     return (  
+        <>
+        {data && 
         <div className={styles.LuxuryLayout}>
-          <Header data={data.header}/>  
+           <Header data={data.header}/>   
          <div id="main" className={styles.content}>
             {children}
         </div>
-         <Footer data={data.footer}/>  
-        </div>
+          <Footer data={data.footer}/>   
+        </div>}
+        </>
     );
 };
 
