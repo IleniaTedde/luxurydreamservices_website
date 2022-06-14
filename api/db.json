@@ -1,6 +1,34 @@
 
   { 
     "layout" : {
+      "routes" : {
+        "link": [
+          {
+            "slug" : "home" ,
+            "url": "/"
+          },
+          {
+            "slug" : "services" ,
+            "url": "/services"
+          },
+          {
+            "slug" : "services 1" ,
+            "url": "/services/services_1"
+          },
+          {
+            "slug" : "services 2" ,
+            "url": "/services/services_2"
+          },
+          {
+            "slug" : "services 3" ,
+            "url": "/services/services_3"
+          },
+          {
+            "slug" : "services 4" ,
+            "url": "/services/services_4"
+          }
+           ]
+      },
       "header": {
         "link": [
           {

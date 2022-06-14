@@ -8,6 +8,10 @@ import Services from "../../pages/Services";
 const Components = {
     "home": Home,
     "services": Services,
+    "services 1": Services,
+    "services 2": Services,
+    "services 3": Services,
+    "services 4": Services,
 }
 
 const ReactCreteElement = ({baseUrl, slug}) => {
