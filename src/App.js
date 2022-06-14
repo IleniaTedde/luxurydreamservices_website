@@ -34,21 +34,21 @@ function App() {
         <Switch>    
            {data && data.map((el,i) => {
             if(i===0) {
-              <Route exact path={"/"} 
+              <Route key={"route " + el.url} exact path={"/"} 
           render={() => {
             return (
-             <Redirect to={language} />
+             <Redirect to={language}>
+               <ReactCreateElement baseUrl={baseUrl} slug={el.slug}/> 
+              </Redirect>
             )
           }}
           />
             }
-            else {
               return (
                 <Route key={"route " + el.url} exact path={'/' + language + el.url}>
                      <ReactCreateElement baseUrl={baseUrl} slug={el.slug}/>  
                    </Route>
             )    
-            }
                })}   
         </Switch>
       </LuxuryLayout>
