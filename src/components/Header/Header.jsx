@@ -1,8 +1,9 @@
 import styles from "./Header.module.scss";
 import React, { useEffect, useState, useCallback, useRef, useContext } from "react";
 import { Link } from "react-router-dom";
-
+import ApplicationContext from "../../layouts/Context/ApplicationContextProvider";
 const Header = ({data}) => {
+    const { prova } = useContext(ApplicationContext);
     return (
         <>
         <header className={styles.Header}>
