@@ -1,19 +1,12 @@
 import React, { createContext, useEffect, useState } from 'react';
 
-const ApplicationContext = React.createContext(0)
+const ApplicationContext = createContext(0)
 
 export const ApplicationContextProvider = ({ children }) => {
 
-    const [prova, setProva] = useState()
-
-    const setProvaFn = (n) => {
-        if (n>5) {
-            setProvaFn(n);
-        }
-    }
-
+    const [languageProva, setLanguage] = useState('en')
     return (
-        <ApplicationContext.Provider value={{prova, setProva, setProvaFn}}>
+        <ApplicationContext.Provider value={{languageProva, setLanguage }}>
             {children}
         </ApplicationContext.Provider>
     );
