@@ -13,7 +13,6 @@ function App() {
   const baseUrl = 'http://localhost:8000';
 
   const { languageProva } = useContext(ApplicationContext);
-  console.log(languageProva)
 
   const language = 'en';
   
