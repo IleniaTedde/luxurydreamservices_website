@@ -8,7 +8,7 @@ const Header = ({data}) => {
         <header className={styles.Header}>
             {data && data.link && data.link.map((el, i) => {
                 return (
-                    <Link className={styles.link} to={"/"+ (el === "home" ? '' : el)}>{el}</Link>
+                  <Link key={"headerLink " + i} className={styles.link} to={el && el.url}>{el && el.slug}</Link>
                 )
             })}
 
