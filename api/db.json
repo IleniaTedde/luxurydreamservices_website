@@ -12,21 +12,26 @@
             "url": "/services"
           },
           {
-            "slug" : "services 1" ,
+            "slug" : "services_1" ,
             "url": "/services/services_1"
           },
           {
-            "slug" : "services 2" ,
+            "slug" : "services_2" ,
             "url": "/services/services_2"
           },
           {
-            "slug" : "services 3" ,
+            "slug" : "services_3" ,
             "url": "/services/services_3"
           },
           {
-            "slug" : "services 4" ,
+            "slug" : "services_4" ,
             "url": "/services/services_4"
+          },
+          {
+            "slug" : "how-we-work" ,
+            "url": "/how-we-work"
           }
+
            ]
       },
       "header": {
@@ -38,10 +43,24 @@
           {
             "slug" : "services" ,
             "url": "/services"
+          },
+          {
+            "slug" : "how we work" ,
+            "url": "/how-we-work"
           }
-           ]
+           ],
+           "labelForm" : "Your custom request"
       },
-      "footer": "footer"
+      "footer": {
+        "name": "Luxury Dream Services SA",
+        "address": "Via Cantonale 3, 6900 Lugano - Switzerland",
+        "number" : "Tel: +41 91 210 40 30",
+        "social" : {
+          "instagram" : "#",
+          "linkedin" : "#",
+          "tiktok" : "#"
+        }
+      }
     },
 
     "home": {
@@ -49,5 +68,9 @@
         },
     "services": {
             "text" :  "services page"
-            }
+            },
+    "how-we-work": {
+      "text" :  "how we work page"
+    }
+
   }

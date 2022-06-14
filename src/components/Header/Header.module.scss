@@ -16,5 +16,10 @@
     .link {
       color: map.get($theme-colors, "gold");
     }
+    .labelForm {
+      @include montserrat-light;
+      color: map.get($theme-colors, "gold");
+      font-size: calc(10px + 2vmin);
+    }
   }
 

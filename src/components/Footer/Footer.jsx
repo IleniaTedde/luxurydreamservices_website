@@ -4,7 +4,7 @@ import React, { useEffect, useState, useCallback, useRef, useContext } from "rea
 const Footer = ({data}) => {
     return (
         <>
-        <footer className={styles.Footer}>{data}</footer>
+        <footer className={styles.Footer}>{data.name}</footer>
         </>
 
     );

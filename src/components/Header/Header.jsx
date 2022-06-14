@@ -11,7 +11,7 @@ const Header = ({data}) => {
                   <Link key={"headerLink " + i} className={styles.link} to={el && '/' + language +  el.url}>{el && el.slug}</Link>
                 )
             })}
-
+                <button onClick={() => console.log('click')}><span className={styles.labelForm}>{data.labelForm}</span></button>
             </header>
         </>
     );
