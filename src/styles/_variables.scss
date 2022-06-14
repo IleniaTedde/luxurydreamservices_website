@@ -28,7 +28,6 @@ $latest-gradient: (
 // Fonts
 //
 // Poppis
-
 $poppins-font-family: "Poppins", sans-serif;
 $poppins-fw-light: 300;
 $poppins-fw-medium: 500;
@@ -47,6 +46,60 @@ $poppins-fw-bold: 700;
 @mixin poppins-bold {
     font-family: $poppins-font-family;
     font-weight: $poppins-fw-bold;
+}
+
+//Noto Serif Display
+$noto-font-family: "Noto Serif Display Sans";
+$noto-fw-light: 300;
+$noto-fw-regular: 400;
+$noto-fw-medium: 500;
+$noto-fw-semi-bold: 600;
+$noto-fw-bold: 700;
+
+@mixin noto-light {
+    font-family: $noto-font-family;
+    font-weight: $noto-fw-light;
+}
+
+@mixin noto-medium {
+    font-family: $noto-font-family;
+    font-weight: $noto-fw-medium;
+}
+@mixin noto-semi-bold {
+    font-family: $noto-font-family;
+    font-weight: $noto-fw-semi-bold;
+}
+
+@mixin noto-bold {
+    font-family: $noto-font-family;
+    font-weight: $noto-fw-bold;
+}
+
+//Montserrat
+$montserrat-font-family: "Montserrat Sans", sans-serif;
+$montserrat-fw-light: 300;
+$montserrat-fw-regular: 400;
+$montserrat-fw-medium: 500;
+$montserrat-fw-semi-bold: 600;
+$montserrat-fw-bold: 700;
+
+@mixin montserrat-light {
+    font-family: $montserrat-font-family;
+    font-weight: $montserrat-fw-light;
+}
+
+@mixin montserrat-medium {
+    font-family: $montserrat-font-family;
+    font-weight: $montserrat-fw-medium;
+}
+@mixin montserrat-semi-bold {
+    font-family: $montserrat-font-family;
+    font-weight: $montserrat-fw-semi-bold;
+}
+
+@mixin montserrat-bold {
+    font-family: $montserrat-font-family;
+    font-weight: $montserrat-fw-bold;
 }
 
 // Open Sans
