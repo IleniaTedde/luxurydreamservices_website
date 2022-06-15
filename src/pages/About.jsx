@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from "react";
+import Breadcrumb from "../components/Breadrumb/Breadcrumb";
 const About = ({ slug, baseUrl }) => {
     const [api, setApi] = useState(null);
     useEffect(() => {
@@ -15,6 +16,7 @@ const About = ({ slug, baseUrl }) => {
     return (
         <>
             {api && api.seo && <title dangerouslySetInnerHTML={{ __html: api.seo.title }}></title>}
+            {api && api.breadcrumb && <Breadcrumb breadcrumb={api.breadcrumb} /> }
             {api && api.data &&
                 <h2>{api.data.text}</h2>}
         </>

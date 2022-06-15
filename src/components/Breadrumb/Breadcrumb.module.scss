@@ -1,0 +1,67 @@
+@use "sass:map";
+@import "../../styles/variables";
+
+.Breadcrumb {
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    background-color: map.get($theme-colors, "dark-blue");
+    position: relative;
+    nav {
+        padding-left: 2.438rem;
+        margin-bottom: 1rem;
+        padding-bottom: 1.5rem;
+        ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem;
+            color: map.get($theme-colors, "gold");
+            @include montserrat-medium;
+            li {
+                display: flex;
+                gap: .5rem;
+                a {
+                    text-decoration: none;
+                }
+                &:last-child {
+                    a {
+                        text-decoration: underline;
+                        pointer-events: none;
+                    }
+                }
+            }
+        }
+    }
+
+
+.icon {
+    background-color: transparent;
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    top: 0.1rem;
+    margin: auto;
+
+    svg {
+        transform-origin: 50% 50%;
+        transform: rotateZ(90deg);
+        height: auto;
+    }
+}
+
+
+svg {
+    stroke: map.get($theme-colors, "gold");
+    margin-left: 4px;
+    height: fit-content;
+    transition: all .2s ease-in-out;
+    @media (prefers-reduced-motion: reduce) {
+        transition: all 0s;
+        transition-delay: 0ms;
+    }
+    height: auto;
+}
+}

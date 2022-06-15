@@ -83,6 +83,19 @@
         },
     "services": {
             "page" : "/services",
+            "breadcrumb" : {
+                "locale" : "en",
+                "paths" : [
+                   {
+                    "label" : "Home",
+                    "path": "/en"
+                   },
+                   {
+                    "label" : "Services",
+                    "path": "/en/services"
+                   }
+                ]
+            },
             "seo" :{
               "title": "Services | Luxury dream services"
             },
@@ -93,6 +106,19 @@
             },
     "how-we-work": {
             "page" : "/how-we-work",
+            "breadcrumb" : {
+              "locale" : "en",
+              "paths" : [
+                 {
+                  "label" : "Home",
+                  "path": "/en"
+                 },
+                 {
+                  "label" : "How we work",
+                  "path": "/en/how-we-work"
+                 }
+              ]
+          },
             "seo" :{
               "title": "How we work | Luxury dream services"
             }, 
