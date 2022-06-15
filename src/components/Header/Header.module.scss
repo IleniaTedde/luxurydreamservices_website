@@ -202,14 +202,13 @@
               transform-origin: 1px;
 
               &.open:nth-child(1) {
-                  top: -2.5px;
+                  top: -7.5px;
                   transform: rotate(45deg);
               }
-
               &.open:nth-child(2) {
-                  opacity: 0;
-                  transform: translate(20px);
-              }
+                transform: rotate(-45deg);
+                top: 4px;
+            }
           }
       }
     }
