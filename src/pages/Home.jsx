@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
  function Home({slug, baseUrl}) {
-  const [data,setData] = useState(null);
+  const [api,setApi] = useState(null);
 
     useEffect(() => {
         fetch(`${baseUrl}/${slug}`)
@@ -9,14 +9,15 @@ import { useEffect, useState } from "react";
             return res.json();
         })
         .then(data => {
-            setData(data);
+            setApi(data);
         })
     },[])
 
     return (
         <>
-          {data && 
-     <h2>{data.text}</h2>} 
+         { api && api.seo && <title  dangerouslySetInnerHTML={{ __html: api.seo.title }}></title>  }
+          {api &&  api.data && 
+              <h2>{api.data.text}</h2>} 
         </>
     );
 }

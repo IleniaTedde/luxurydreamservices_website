@@ -73,15 +73,33 @@
 
     "home": {
             "page" : "/", 
-            "text" :  "luxuryDreamService_website"
+            "seo" :{
+              "title": "Home | Luxury dream services"
+            }, 
+            "data" : {
+              "text" :  "homepage"
+            }
+           
         },
     "services": {
-            "page" : "/services", 
-            "text" :  "services page"
+            "page" : "/services",
+            "seo" :{
+              "title": "Services | Luxury dream services"
+            },
+            "data" : {
+              "text" :  "services page"
+            }
+      
             },
     "how-we-work": {
-            "page" : "/how-we-work", 
-            "text" :  "how we work page"
+            "page" : "/how-we-work",
+            "seo" :{
+              "title": "How we work | Luxury dream services"
+            }, 
+            "data" : {
+              "text" :  "how we work page"
+            }
+
     }
 
   }
