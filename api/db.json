@@ -61,6 +61,7 @@
           "tiktok" : "#"
         }
       },
+      "locale" : "en",
       "language": [ 
         { 
           "slug" : "en"

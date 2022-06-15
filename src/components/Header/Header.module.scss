@@ -16,6 +16,10 @@
 
     .containerSx {
      position: relative;
+     @include breakpoint-under('lg'){
+      order: 1;
+      width: 33.333333%;
+    }
 
     .logo {
       width: 60%;
@@ -32,16 +36,23 @@
 
     }
     .containerDx {
+      @include breakpoint-under('lg'){
+        order: 0;
+        width: 33.333333%;
+        padding-right:0rem;
+      }
       display: flex;
       padding-right:3.188rem;
       gap: 1rem;
       position: relative;
       .link {
-        color: map.get($theme-colors, "gold");
         margin-top:2.875rem;
         position: relative;
         padding-bottom: 0.3rem;
         height: fit-content;
+        @include breakpoint-under('lg'){
+            display: none;
+        }
         &::after {
           content: '';
           position: absolute;
@@ -55,6 +66,9 @@
               transition: all 0s;
               transition-delay: 0ms;
           }
+          @include breakpoint-under('lg'){
+            display: none;
+        }
         }
         &:hover {
           &::after{
@@ -95,6 +109,9 @@
           color: map.get($theme-colors, "grey");
           background-color: map.get($theme-colors, "gold") !important;
         }
+        @include breakpoint-under('lg'){
+          display: none;
+      }
         
       }
       .language {
@@ -104,7 +121,6 @@
         padding-bottom: 0.3rem;
         cursor: pointer;
         height: fit-content;
-
         &::after {
           content: '';
           position: absolute;
@@ -135,6 +151,68 @@
       }
       }
     }
+    .burgerMenu {
+      display: none;
+      margin-top: 2.875rem;
+      @include breakpoint-under('lg'){
+        display: block;
+          order: 2;
+          width: 33.333333%;
+    }
+      justify-content: flex-end;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 1.25rem;
+      @include breakpoint-under("lg") {
+        display: flex;
+         // margin-left: auto;
+          z-index: 2;
+          margin-right: 1.5rem;
+      }
 
+      .burgerIcons {
+          display: none;
+
+          @include breakpoint-under("lg") {
+              display: flex;
+              flex-direction: column;
+              gap: .35rem;
+              align-items: center;
+              justify-content: center;
+              width: 2rem;
+              height: 2rem;
+              background: transparent;
+              border: none;
+              cursor: pointer;
+              padding: 0;
+              z-index: 10;
+          }
+
+          span {
+              width: 1.75rem;
+              height: 1px;
+              background-color: map.get($theme-colors, "gold") !important;
+              border-radius: 10px;
+              transition: all 0.4s linear;
+              @media (prefers-reduced-motion: reduce) {
+                  transition: all 0s;
+                  transition-delay: 0ms;
+              }
+              position: relative;
+              transform-origin: 1px;
+
+              &.open:nth-child(1) {
+                  top: -2.5px;
+                  transform: rotate(45deg);
+              }
+
+              &.open:nth-child(2) {
+                  opacity: 0;
+                  transform: translate(20px);
+              }
+          }
+      }
+    }
+    
   }
 

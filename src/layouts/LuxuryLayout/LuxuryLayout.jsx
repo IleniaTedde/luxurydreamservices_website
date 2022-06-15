@@ -21,13 +21,13 @@ const LuxuryLayout = ({children, baseUrl}) => {
         {data && 
         <div className={styles.LuxuryLayout}>
             <section>
-           <Header data={data.header} language={data.language} selector={refFooter}/>   
+           <Header data={data.header} language={data.language} selector={refFooter} locale={data.locale}/>   
            </section>
          <div id="main" className={styles.content}>
             {children}
         </div>
         <section ref={refFooter}>
-          <Footer data={data.footer}/>  
+          <Footer data={data.footer} locale={data.locale}/>  
           </section> 
         </div>}
         </>

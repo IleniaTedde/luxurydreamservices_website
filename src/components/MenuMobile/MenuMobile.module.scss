@@ -1,0 +1,15 @@
+@use "sass:map";
+@import "../../styles/variables";
+@import "../../styles/media_queries";
+
+.MenuMobile {
+    background-color: map.get($theme-colors, "dark-blue");
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    @include noto-semi-bold;
+    color: map.get($theme-colors, "gold");
+  }
