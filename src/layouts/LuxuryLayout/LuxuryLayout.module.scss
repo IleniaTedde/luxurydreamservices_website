@@ -1,0 +1,8 @@
+@use "sass:map";
+@import "../../styles/variables";
+@import "../../styles/media_queries";
+
+.content {
+    height: 150vh;
+    background-color: map.get($theme-colors, "grey");
+}

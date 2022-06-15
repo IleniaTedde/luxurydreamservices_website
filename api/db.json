@@ -60,17 +60,28 @@
           "linkedin" : "#",
           "tiktok" : "#"
         }
-      }
+      },
+      "language": [ 
+        { 
+          "slug" : "en"
+        },
+        { 
+          "slug" : "it"
+        }
+      ]
     },
 
     "home": {
-        "text" :  "luxuryDreamService_website"
+            "page" : "/", 
+            "text" :  "luxuryDreamService_website"
         },
     "services": {
+            "page" : "/services", 
             "text" :  "services page"
             },
     "how-we-work": {
-      "text" :  "how we work page"
+            "page" : "/how-we-work", 
+            "text" :  "how we work page"
     }
 
   }

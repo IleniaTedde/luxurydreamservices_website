@@ -1,10 +1,11 @@
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import styles from "./LuxuryLayout.module.scss";
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 
 const LuxuryLayout = ({children, baseUrl}) => {
     const [data, setData] = useState(null);
+    const refFooter = useRef(null);
     useEffect(() => {
         fetch(`${baseUrl}/layout`)
             .then(res => {
@@ -15,16 +16,19 @@ const LuxuryLayout = ({children, baseUrl}) => {
             })
     }, [])
 
-
     return (  
         <>
         {data && 
         <div className={styles.LuxuryLayout}>
-           <Header data={data.header}/>   
+            <section>
+           <Header data={data.header} language={data.language} selector={refFooter}/>   
+           </section>
          <div id="main" className={styles.content}>
             {children}
         </div>
-          <Footer data={data.footer}/>   
+        <section ref={refFooter}>
+          <Footer data={data.footer}/>  
+          </section> 
         </div>}
         </>
     );

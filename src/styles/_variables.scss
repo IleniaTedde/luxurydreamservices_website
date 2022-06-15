@@ -27,26 +27,6 @@ $latest-gradient: (
 
 // Fonts
 //
-// Poppis
-$poppins-font-family: "Poppins", sans-serif;
-$poppins-fw-light: 300;
-$poppins-fw-medium: 500;
-$poppins-fw-bold: 700;
-
-@mixin poppins-light {
-    font-family: $poppins-font-family;
-    font-weight: $poppins-fw-light;
-}
-
-@mixin poppins-medium {
-    font-family: $poppins-font-family;
-    font-weight: $poppins-fw-medium;
-}
-
-@mixin poppins-bold {
-    font-family: $poppins-font-family;
-    font-weight: $poppins-fw-bold;
-}
 
 //Noto Serif Display
 $noto-font-family: "Noto Serif Display Sans";
