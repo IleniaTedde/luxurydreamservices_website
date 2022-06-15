@@ -8,6 +8,8 @@ import Home from './pages/Home';
 import Services from './pages/Services';
 import ApplicationContext from './layouts/Context/ApplicationContextProvider';
 
+
+
 function App() {
   //const baseUrl = `${process.env.LDS_BASEURL}`;
   const baseUrl = 'http://localhost:8000';
@@ -15,7 +17,8 @@ function App() {
   const { languageProva } = useContext(ApplicationContext);
 
   const language = 'en';
-  
+
+
   const [data, setData] = useState(null);
   useEffect(() => {
     fetch(`${baseUrl}/layout`)
@@ -27,22 +30,17 @@ function App() {
         setData(data.routes.link);}
       })
   }, [])
+
+
+  if(window.location.pathname === '/') {
+    window.location.replace(`http://localhost:3000/${language}`)
+  }
   return (
+    <>
     <Router>
       <LuxuryLayout baseUrl={baseUrl}>
         <Switch>    
            {data && data.map((el,i) => {
-            if(i===0) {
-              <Route key={"route " + el.url} exact path={"/"} 
-          render={() => {
-            return (
-             <Redirect to={language}>
-               <ReactCreateElement baseUrl={baseUrl} slug={el.slug}/> 
-              </Redirect>
-            )
-          }}
-          />
-            }
               return (
                 <Route key={"route " + el.url} exact path={'/' + language + el.url}>
                      <ReactCreateElement baseUrl={baseUrl} slug={el.slug}/>  
@@ -52,6 +50,7 @@ function App() {
         </Switch>
       </LuxuryLayout>
     </Router>
+    </>
   );
 }
 
