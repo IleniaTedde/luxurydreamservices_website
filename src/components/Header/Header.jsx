@@ -59,7 +59,7 @@ const Header = ({ data, language, selector, locale, labels, slugPage }) => {
                       {slugPage === 'home' ?   
                      <img key={"logo header home"} className={styles.logo} src={logoHome} alt="logo home" /> 
                        :
-                        <img key={"logo header"} className={styles.logo} src={logo} alt="logo" /> } 
+                        <img key={"logo header"} className={`${styles.logo} ${styles.logoOtherPage}`} src={logo} alt="logo" /> } 
                     </a>           
                 </div>
 

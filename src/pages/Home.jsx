@@ -16,8 +16,8 @@ import { useEffect, useState } from "react";
     return (
         <>
          { api && api.seo && <title  dangerouslySetInnerHTML={{ __html: api.seo.title }}></title>  }
-          {api &&  api.data && 
-              <h2>{api.data.text}</h2>} 
+          {api &&  api.data && <div>
+              <h2>{api.data.text}</h2></div>} 
         </>
     );
 }

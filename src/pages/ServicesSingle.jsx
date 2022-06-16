@@ -28,9 +28,9 @@ const ServicesSingle = ({ slug, baseUrl }) => {
             {api && api.seo && <title dangerouslySetInnerHTML={{ __html: api.seo.title }} />}
              {api && api.breadcrumb &&    <Breadcrumb breadcrumb={api.breadcrumb} /> } 
             {api && api.data &&
-            <>
+            <div>
               <h2>{api.data.text}</h2>
-               </> }
+               </div> }
         </>
     );
 }

@@ -33,13 +33,13 @@ function App() {
   }, [])
 
 
-  if(window.location.pathname === '/') {
+  if((window.location.pathname === '/' )&& locale) {
     window.location.replace(`http://localhost:3000/${locale}`)
   }
   return (
     <>
+   {locale && 
     <Router>
-     
         <Switch>    
            {data && data.map((el,i) => {
               return (
@@ -52,6 +52,7 @@ function App() {
                })}   
         </Switch>
     </Router>
+    }
     </>
   );
 }
