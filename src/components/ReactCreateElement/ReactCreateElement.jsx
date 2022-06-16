@@ -4,15 +4,13 @@ import { Link } from "react-router-dom";
 
 import Home from "../../pages/Home";
 import Services from "../../pages/Services";
+import ServicesSingle from "../../pages/ServicesSingle";
 import About from "../../pages/About";
 
 const Components = {
     "home": Home,
     "services": Services,
-    "services_1": Services,
-    "services_2": Services,
-    "services_3": Services,
-    "services_4": Services,
+    "services-single": ServicesSingle,
     "how-we-work": About,
 }
 

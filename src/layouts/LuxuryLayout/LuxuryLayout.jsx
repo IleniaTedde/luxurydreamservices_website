@@ -3,7 +3,7 @@ import Footer from "../../components/Footer/Footer";
 import styles from "./LuxuryLayout.module.scss";
 import React, {useState, useEffect, useRef} from "react";
 
-const LuxuryLayout = ({children, baseUrl}) => {
+const LuxuryLayout = ({children, baseUrl, slug}) => {
     const [data, setData] = useState(null);
     const [labels, setLabels] = useState(null);
     const refFooter = useRef(null);
@@ -27,16 +27,16 @@ const LuxuryLayout = ({children, baseUrl}) => {
 
     return (  
         <>
-        {data && 
+        {data && labels && 
         <div className={styles.LuxuryLayout}>
-            <section>
-           <Header data={data.header} language={data.language} selector={refFooter} locale={data.locale} labels={labels}/>   
-           </section>
+             <section>
+             <Header data={data.header} language={data.language} selector={refFooter} locale={data.locale} labels={labels} slugPage={slug}/>  
+           </section> 
          <div id="main" className={styles.content}>
             {children}
         </div>
         <section ref={refFooter}>
-          <Footer data={data.footer} locale={data.locale} labels={labels}/>  
+          <Footer data={data.footer} locale={data.locale} labels={labels} slugPage={slug} />  
           </section> 
         </div>}
         </>

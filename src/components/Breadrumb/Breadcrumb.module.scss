@@ -1,5 +1,6 @@
 @use "sass:map";
 @import "../../styles/variables";
+@import "../../styles/media_queries";
 
 .Breadcrumb {
     padding-top: 1rem;
@@ -11,6 +12,9 @@
         padding-left: 2.438rem;
         margin-bottom: 1rem;
         padding-bottom: 1.5rem;
+        @include breakpoint-under('lg'){
+            padding-left: 1.6rem;
+        }
         ol {
             list-style: none;
             padding: 0;

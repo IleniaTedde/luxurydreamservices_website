@@ -12,20 +12,8 @@
             "url": "/services"
           },
           {
-            "slug" : "services_1" ,
-            "url": "/services/services_1"
-          },
-          {
-            "slug" : "services_2" ,
-            "url": "/services/services_2"
-          },
-          {
-            "slug" : "services_3" ,
-            "url": "/services/services_3"
-          },
-          {
-            "slug" : "services_4" ,
-            "url": "/services/services_4"
+            "slug" : "services-single" ,
+            "url": "/services/services-single"
           },
           {
             "slug" : "how-we-work" ,
@@ -128,6 +116,32 @@
               "text" :  "how we work page"
             }
 
+    },
+    "services-single": {
+      "page" : "/services/services-single",
+      "breadcrumb" : {
+          "locale" : "en",
+          "paths" : [
+             {
+              "label" : "Home",
+              "path": "/en"
+             },
+             {
+              "label" : "Services",
+              "path": "/en/services"
+             },
+             {
+              "label" : "Services single",
+              "path": "/en/services-single"
+             }
+          ]
+      },
+      "seo" :{
+        "title": "Services single | Luxury dream services"
+      },
+      "data" : {
+        "text" :  "services single page"
+      }
     }
 
   }

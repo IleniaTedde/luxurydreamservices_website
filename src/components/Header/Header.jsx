@@ -1,17 +1,17 @@
 import styles from "./Header.module.scss";
 import React, { useEffect, useState, useCallback, useRef, useContext } from "react";
 import { Link } from "react-router-dom";
-import logo from './../../assets/icons/lds_logo_oro.svg';
+import logoHome from './../../assets/icons/lds_logo_oro.svg';
+import logo from './../../assets/icons/lds_logo_oro2.svg';
 import MenuMobile from "../MenuMobile/MenuMobile";
 
-const Header = ({ data, language, selector, locale, labels }) => {
+const Header = ({ data, language, selector, locale, labels, slugPage }) => {
     const [slug, setSlug] = useState(null);
     const [ openBurgerMenu, setOpenBurgerMenu] = useState(false);
     const [ headerFixed, setHeaderFixed] = useState(true);
 
     const setSlugFn = (slug) => {
         setSlug(slug);
-        console.log(slug);
     }
     const scroll = () => {
         window.scrollTo({
@@ -24,12 +24,13 @@ const Header = ({ data, language, selector, locale, labels }) => {
     const scrollHandler = () => {
         var topContent = document.querySelector('#main').getBoundingClientRect().top; 
         var st = window.pageYOffset  || document.documentElement.scrollTop;
-        if((st > lastScrollTop) && (topContent < -200)) {
+        if((st > lastScrollTop) && (topContent < -100)) {
             setHeaderFixed(false)
           }
           else {
             setHeaderFixed(true)
           }
+          lastScrollTop = st <= 0 ? 0 : st;
     }
 
     const useIsomorphicLayoutEffect = typeof window !== "undefined" ? React.useLayoutEffect : React.useEffect;
@@ -41,7 +42,6 @@ const Header = ({ data, language, selector, locale, labels }) => {
         window.removeEventListener("scroll", scrollHandler);
       };
     }, []);
-
     return (
         <>
              <MenuMobile
@@ -56,7 +56,10 @@ const Header = ({ data, language, selector, locale, labels }) => {
                 <div className={`${styles.headerContainer} ${!headerFixed ? 'noHeaderFixed' : ' headerFixed'}`}>
                 <div className={styles.containerSx}>
                     <a href={`/${locale}/`}>
-                        <img key={"logo header"} className={styles.logo} src={logo} alt="logo" />
+                      {slugPage === 'home' ?   
+                     <img key={"logo header home"} className={styles.logo} src={logoHome} alt="logo home" /> 
+                       :
+                        <img key={"logo header"} className={styles.logo} src={logo} alt="logo" /> } 
                     </a>           
                 </div>
 
@@ -76,7 +79,7 @@ const Header = ({ data, language, selector, locale, labels }) => {
                             )
                         }
                     })}
-                    <button onClick={() => scroll()}><span className={styles.labelForm}>{labels.labelForm}</span></button>
+                  {labels && labels.labelForm &&  <button onClick={() => scroll()}><span className={styles.labelForm}>{labels.labelForm}</span></button> } 
 
                     {language && language.map((el, i) => {
                         return <div key={'language ' + i} className={`${styles.language} ${el.slug === locale ? styles.languageSelected : ''}`}>{el.slug}</div>

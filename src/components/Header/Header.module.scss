@@ -10,6 +10,8 @@
     font-size: 0.875rem;
     text-transform: uppercase;
     height: fit-content;
+    z-index: 3;
+    padding-bottom: 11rem;
 
    .headerContainer {
     justify-content: space-between;
@@ -27,12 +29,12 @@
 
     .logo {
       padding-top: 2.875rem;
-      padding-bottom: 2.875rem;
       padding-left: 2.438rem;
       padding-right: 2.438rem;
       position: relative;
       height: auto;
-      width: 60%;
+      min-width: 122px;
+      max-width: 152px;
       @include breakpoint-under('lg'){
         width: 80%;
         padding-left: 0rem;

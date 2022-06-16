@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react";
 import Breadcrumb from "../components/Breadrumb/Breadcrumb";
-const Services = ({ slug, baseUrl }) => {
+const ServicesSingle = ({ slug, baseUrl }) => {
     
     const [api, setApi] = useState(null);
     const [locale, setLocale] = useState(null);
@@ -26,11 +26,12 @@ const Services = ({ slug, baseUrl }) => {
     return (
         <>
             {api && api.seo && <title dangerouslySetInnerHTML={{ __html: api.seo.title }} />}
-            {api && api.data && <>
-             <h2>{api.data.text}</h2>
-            <a href={'/' + locale + '/services/services-single'}> <h2>{'services single page'}</h2> </a>
-              </>}
+             {api && api.breadcrumb &&    <Breadcrumb breadcrumb={api.breadcrumb} /> } 
+            {api && api.data &&
+            <>
+              <h2>{api.data.text}</h2>
+               </> }
         </>
     );
 }
-export default Services;
+export default ServicesSingle;

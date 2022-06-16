@@ -16,10 +16,9 @@ function App() {
 
   const { languageProva } = useContext(ApplicationContext);
 
-  const language = 'en';
-
 
   const [data, setData] = useState(null);
+  const [locale, setLocale] = useState(null);
   useEffect(() => {
     fetch(`${baseUrl}/layout`)
       .then(res => {
@@ -27,28 +26,31 @@ function App() {
       })
       .then(data => {
        { data && data.routes && data.routes.link &&
-        setData(data.routes.link);}
+        setData(data.routes.link);
+        setLocale(data.locale);
+      }
       })
   }, [])
 
 
   if(window.location.pathname === '/') {
-    window.location.replace(`http://localhost:3000/${language}`)
+    window.location.replace(`http://localhost:3000/${locale}`)
   }
   return (
     <>
     <Router>
-      <LuxuryLayout baseUrl={baseUrl}>
+     
         <Switch>    
            {data && data.map((el,i) => {
               return (
-                <Route key={"route " + el.url} exact path={'/' + language + el.url}>
-                     <ReactCreateElement baseUrl={baseUrl} slug={el.slug}/>  
+                <Route key={"route " + el.url} exact path={'/' + locale + el.url}>
+                   <LuxuryLayout baseUrl={baseUrl} slug={el.slug}>
+                     <ReactCreateElement baseUrl={baseUrl} slug={el.slug}/> 
+                     </LuxuryLayout> 
                    </Route>
             )    
                })}   
         </Switch>
-      </LuxuryLayout>
     </Router>
     </>
   );
