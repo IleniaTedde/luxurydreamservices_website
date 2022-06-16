@@ -182,3 +182,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.headerFixed {
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+ }
+
+ .noHeaderFixed {
+  opacity: 0 ;
+  transition: all 0.5s ease-in-out;
+ }

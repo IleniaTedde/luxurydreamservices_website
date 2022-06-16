@@ -3,6 +3,8 @@
 @import "../../styles/media_queries";
 
 .content {
+    padding-top: 205px;
     height: 150vh;
-    background-color: map.get($theme-colors, "grey");
+    background-color: map.get($theme-colors, "dark-blue");
+    color: map.get($theme-colors, "grey");
 }

@@ -48,8 +48,7 @@
             "slug" : "how we work" ,
             "url": "/how-we-work"
           }
-           ],
-           "labelForm" : "Your custom request"
+           ]
       },
       "footer": {
         "name": "Luxury Dream Services SA",
@@ -71,7 +70,9 @@
         }
       ]
     },
-
+    "labels" : {
+      "labelForm" : "Your custom request"
+    },
     "home": {
             "page" : "/", 
             "seo" :{

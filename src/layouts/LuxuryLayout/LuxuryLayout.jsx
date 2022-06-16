@@ -5,6 +5,7 @@ import React, {useState, useEffect, useRef} from "react";
 
 const LuxuryLayout = ({children, baseUrl}) => {
     const [data, setData] = useState(null);
+    const [labels, setLabels] = useState(null);
     const refFooter = useRef(null);
     useEffect(() => {
         fetch(`${baseUrl}/layout`)
@@ -14,6 +15,14 @@ const LuxuryLayout = ({children, baseUrl}) => {
             .then(data => {
                 setData(data);
             })
+
+            fetch(`${baseUrl}/labels`)
+            .then(res => {
+                return res.json();
+            })
+            .then(labels => {
+                setLabels(labels);
+            })
     }, [])
 
     return (  
@@ -21,13 +30,13 @@ const LuxuryLayout = ({children, baseUrl}) => {
         {data && 
         <div className={styles.LuxuryLayout}>
             <section>
-           <Header data={data.header} language={data.language} selector={refFooter} locale={data.locale}/>   
+           <Header data={data.header} language={data.language} selector={refFooter} locale={data.locale} labels={labels}/>   
            </section>
          <div id="main" className={styles.content}>
             {children}
         </div>
         <section ref={refFooter}>
-          <Footer data={data.footer} locale={data.locale}/>  
+          <Footer data={data.footer} locale={data.locale} labels={labels}/>  
           </section> 
         </div>}
         </>
