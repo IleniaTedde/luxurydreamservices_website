@@ -26,11 +26,11 @@ const ServicesSingle = ({ slug, baseUrl }) => {
     return (
         <>
             {api && api.seo && <title dangerouslySetInnerHTML={{ __html: api.seo.title }} />}
-             {api && api.breadcrumb &&    <Breadcrumb breadcrumb={api.breadcrumb} /> } 
-            {api && api.data &&
             <div>
-              <h2>{api.data.text}</h2>
-               </div> }
+            {api && api.breadcrumb &&    <Breadcrumb breadcrumb={api.breadcrumb} /> } 
+            {api && api.data &&
+              <h2>{api.data.text}</h2> }
+            </div>
         </>
     );
 }

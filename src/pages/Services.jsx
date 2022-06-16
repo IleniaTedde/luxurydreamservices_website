@@ -26,10 +26,12 @@ const Services = ({ slug, baseUrl }) => {
     return (
         <>
             {api && api.seo && <title dangerouslySetInnerHTML={{ __html: api.seo.title }} />}
-            {api && api.data && <div>
+            <div>    {api && api.data && 
+            <>
              <h2>{api.data.text}</h2>
             <a href={'/' + locale + '/services/services-single'}> <h2>{'services single page'}</h2> </a>
-              </div>}
+            </> }
+              </div>
         </>
     );
 }

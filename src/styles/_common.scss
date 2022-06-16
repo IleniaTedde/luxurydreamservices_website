@@ -195,6 +195,7 @@ code {
  }
 
  #main {
+  background-color: map.get($theme-colors, "dark-blue");
   & > div:last-child {
     position: relative;
     padding-top: 12rem;

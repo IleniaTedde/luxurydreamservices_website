@@ -22,17 +22,19 @@
             display: flex;
             flex-wrap: wrap;
             gap: .5rem;
-            color: map.get($theme-colors, "gold");
-            @include montserrat-medium;
+            color: map.get($theme-colors, "grey");
+            @include montserrat-regular;
             li {
                 display: flex;
                 gap: .5rem;
                 a {
                     text-decoration: none;
+                    opacity: 0.7;
                 }
                 &:last-child {
                     a {
-                        text-decoration: underline;
+                        opacity: 1;
+                       // text-decoration: underline;
                         pointer-events: none;
                     }
                 }
@@ -48,6 +50,7 @@
     position: relative;
     top: 0.1rem;
     margin: auto;
+    opacity: 0.5;
 
     svg {
         transform-origin: 50% 50%;
@@ -58,7 +61,7 @@
 
 
 svg {
-    stroke: map.get($theme-colors, "gold");
+    stroke: map.get($theme-colors, "grey");
     margin-left: 4px;
     height: fit-content;
     transition: all .2s ease-in-out;

@@ -67,6 +67,10 @@ $montserrat-fw-bold: 700;
     font-family: $montserrat-font-family;
     font-weight: $montserrat-fw-light;
 }
+@mixin montserrat-regular {
+    font-family: $montserrat-font-family;
+    font-weight: $montserrat-fw-regular;
+}
 
 @mixin montserrat-medium {
     font-family: $montserrat-font-family;
