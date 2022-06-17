@@ -79,14 +79,6 @@
       },
       "social": [
         {
-          "name": "twitter",
-          "link" : {
-            "url": "#",
-            "target" : "_blank"
-          }
-   
-        },
-        {
           "name": "instagram",
           "link" : {
             "url": "#",
@@ -95,6 +87,13 @@
         },
         {
           "name": "linkedin",
+          "link" : {
+            "url": "#",
+            "target" : "_blank"
+          }
+        },
+        {
+          "name": "tiktok",
           "link" : {
             "url": "#",
             "target" : "_blank"
