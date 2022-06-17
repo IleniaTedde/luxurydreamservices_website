@@ -16,6 +16,22 @@
             "url": "/services/services-single"
           },
           {
+              "slug" : "holiday",
+              "url": "/services/holiday"
+          },
+          {
+              "slug" : "relocation",
+              "url": "/services/relocation"
+          },
+          {
+              "slug" : "business trip",
+              "url": "/services/business-trip"
+          },
+          {
+              "slug" : "locals",
+              "url": "/services/locals"
+          },
+          {
             "slug" : "how-we-work" ,
             "url": "/how-we-work"
           }
@@ -30,7 +46,25 @@
           },
           {
             "slug" : "services" ,
-            "url": "/services"
+            "url": "/services",
+            "items" : [
+              {
+                "slug" : "holiday",
+                "url": "/services/holiday"
+              },
+              {
+                "slug" : "relocation",
+                "url": "/services/relocation"
+              },
+              {
+                "slug" : "business trip",
+                "url": "/services/business-trip"
+              },
+              {
+                "slug" : "locals",
+                "url": "/services/locals"
+              }
+            ]
           },
           {
             "slug" : "how we work" ,
@@ -41,13 +75,32 @@
       "footer": {
         "name": "Luxury Dream Services SA",
         "address": "Via Cantonale 3, 6900 Lugano - Switzerland",
-        "number" : "Tel: +41 91 210 40 30",
-        "social" : {
-          "instagram" : "#",
-          "linkedin" : "#",
-          "tiktok" : "#"
-        }
+        "number" : "Tel: +41 91 210 40 30"
       },
+      "social": [
+        {
+          "name": "twitter",
+          "link" : {
+            "url": "#",
+            "target" : "_blank"
+          }
+   
+        },
+        {
+          "name": "instagram",
+          "link" : {
+            "url": "#",
+            "target" : "_blank"
+          }
+        },
+        {
+          "name": "linkedin",
+          "link" : {
+            "url": "#",
+            "target" : "_blank"
+          }
+        }
+      ],
       "locale" : "en",
       "language": [ 
         { 

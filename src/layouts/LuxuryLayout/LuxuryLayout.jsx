@@ -24,13 +24,12 @@ const LuxuryLayout = ({children, baseUrl, slug}) => {
                 setLabels(labels);
             })
     }, [])
-
     return (  
         <>
         {data && labels && 
         <div className={styles.LuxuryLayout}>
              <section>
-             <Header data={data.header} language={data.language} selector={refFooter} locale={data.locale} labels={labels} slugPage={slug}/>  
+             <Header data={data.header} language={data.language} social={data.social} selector={refFooter} locale={data.locale} labels={labels} slugPage={slug}/>  
            </section> 
          <div id="main" className={styles.content}>
             {children}

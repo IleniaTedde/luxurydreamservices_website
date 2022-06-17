@@ -5,7 +5,7 @@ import logoHome from './../../assets/icons/lds_logo_oro.svg';
 import logo from './../../assets/icons/lds_logo_oro2.svg';
 import MenuMobile from "../MenuMobile/MenuMobile";
 
-const Header = ({ data, language, selector, locale, labels, slugPage }) => {
+const Header = ({ data, language, selector, locale, labels, slugPage, social }) => {
     const [slug, setSlug] = useState(null);
     const [ openBurgerMenu, setOpenBurgerMenu] = useState(false);
     const [ headerFixed, setHeaderFixed] = useState(true);
@@ -42,6 +42,7 @@ const Header = ({ data, language, selector, locale, labels, slugPage }) => {
         window.removeEventListener("scroll", scrollHandler);
       };
     }, []);
+
     return (
         <>
              <MenuMobile
@@ -50,10 +51,12 @@ const Header = ({ data, language, selector, locale, labels, slugPage }) => {
              onClickMenuItem={() => setOpenBurgerMenu(!openBurgerMenu)}
              locale={locale}
              labels={labels}
+             language={language}
              selector={selector}
+             social={social}
              /> 
             <header className={styles.Header}>
-                <div className={`${styles.headerContainer} ${!headerFixed ? 'noHeaderFixed' : ' headerFixed'}`}>
+                <div className={`${styles.headerContainer} ${(!headerFixed && !openBurgerMenu)  ? 'noHeaderFixed' : ' headerFixed'}`}>
                 <div className={styles.containerSx}>
                     <a href={`/${locale}/`}>
                       {slugPage === 'home' ?   
@@ -71,7 +74,7 @@ const Header = ({ data, language, selector, locale, labels, slugPage }) => {
                         else {
                             return (
                                 <Link key={"headerLink " + i}
-                                    className={`${styles.link} ${slug === (el.url) ? styles.linkSelected : ''}`}
+                                    className={`${styles.link} ${('/' + slugPage) === (el.url) ? styles.linkSelected : ''}`}
                                     to={el && '/' + locale + el.url}>
                                     <span onClick={() => setSlugFn(el.url)}>{el && el.slug}
                                     </span>

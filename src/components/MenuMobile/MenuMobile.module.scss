@@ -3,6 +3,8 @@
 @import "../../styles/media_queries";
 
 .MenuMobile {
+  overflow: scroll;
+  letter-spacing: 3px;
   top: 0;
   right: 0;
   position: fixed;
@@ -23,36 +25,47 @@
     justify-content: center;
     flex-wrap: wrap;
   }
+  .linkContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
   .menuMobileContainer {
     position: absolute;
    // top: 100px;
    display: flex;
    flex-direction: column;
-   gap: 2.5rem;
    align-self: center;
    transition: all 0.5s ease-out;
+   justify-content: space-between;
+   height: calc(100% - 150px);
    @media (prefers-reduced-motion: reduce) {
     transition: all 0s;
     transition-delay: 0ms;
 }
    transform: translateX(0vw);
-   padding: 50px 0 ;
-
-}
-.menuMobileItem {
+   top: 150px;
+   min-height: 480px;
+  }
+ .menuMobileItem {
   cursor: pointer;
-  font-size: 1.125rem;
+  font-size: 0.875rem;
+  margin: 0 auto;
+  text-align: center;
   color: map.get($theme-colors, "gold");
-  @include montserrat-medium;
+  @include montserrat-semi-bold;
     position: relative;
     width: fit-content;
-    text-transform: capitalize;
+    text-transform: uppercase;
+    display: block;   
+    margin-bottom: 1.875rem !important;
    }
   
    .labelForm {
     position: relative;
     padding: 1.563rem;
-    @include montserrat-medium;
+    @include montserrat-semi-bold;
+    text-transform: uppercase;
     display: flex;
     color: map.get($theme-colors, "gold");
     font-size: 1.125rem;
@@ -67,9 +80,68 @@
       color: map.get($theme-colors, "grey");
       background-color: map.get($theme-colors, "gold") !important;
     }
+    }
   }
-  }
+  .flexEnd {
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    color: aliceblue;
+    padding-bottom: 1.263rem;
 
+    .languageContainer {
+      text-transform: uppercase;
+      display: flex;
+      .language {
+        color: map.get($theme-colors, "gold");
+        position: relative;
+        margin-right: 1rem;
+        padding-bottom: 0.3rem;
+        cursor: pointer;
+        height: fit-content;
+        z-index: 3;
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          width: 0;
+          height: 1px;
+          background-color: map.get($theme-colors, "gold");
+          transition: all 1s cubic-bezier(.19,1,.22,1);
+          @media (prefers-reduced-motion: reduce) {
+              transition: all 0s;
+              transition-delay: 0ms;
+          }
+        }
+        &:hover {
+          &::after{
+              left: 0;
+              width: 100%;
+          }
+      }
+  
+      }
+      .languageSelected {
+        color: map.get($theme-colors, "grey");
+        &::after{
+          left: 0;
+          width: 100%;
+      }
+      }
+    }
+
+    .social {
+      svg path {
+        stroke: #84754E;
+        fill: #84754E;
+      }
+
+    }
+  }
   .open {
     transform: translate(0);
     width: 100%;

@@ -1,0 +1,11 @@
+@use "sass:map";
+@import "../../styles/variables";
+@import "../../styles/media_queries";
+
+
+.Social {
+   position: relative;
+   display: flex;
+   gap: 0.5rem;
+   cursor: pointer;
+}
