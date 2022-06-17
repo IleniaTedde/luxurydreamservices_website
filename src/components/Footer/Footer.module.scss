@@ -13,4 +13,28 @@
     //@include poppins-bold;
     @include noto-semi-bold;
     color: map.get($theme-colors, "gold");
+
+
+    .form {
+      width: 100%;
+    }
+    .footer {
+      width: 100%;
+    }
+    .bottomFooter {
+      width: 100%;
+    }
+    hr {
+      background-color: rgba( map.get($theme-colors, "gold"), 0.5);
+      border: none;
+      height: 1px;
+      opacity: 0;
+      width: 100%;
+      margin: 3rem auto;
+      transform: translateX(-100%);
+      position: relative;
+      @include breakpoint-under('lg'){
+        margin: 1rem auto;
+      }
+    }
   }

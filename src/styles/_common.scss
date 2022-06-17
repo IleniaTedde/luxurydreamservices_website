@@ -198,6 +198,26 @@ code {
   background-color: map.get($theme-colors, "dark-blue");
   & > div:last-child {
     position: relative;
-    padding-top: 12rem;
+    padding-top: 10rem;
+    @include breakpoint-under('lg'){
+      padding-top: 9rem;
+    }
   }
  }
+
+ .mainWithBreadcrumb {
+  padding-top: 9rem !important;
+  @include breakpoint-under('lg'){
+    padding-top: 6rem !important;
+  }
+ }
+ .linesAnimated {
+  width: 100% !important;
+  transition: all 3s cubic-bezier(.19,1,.22,1);
+  transition-delay: 0.2s;
+  transform: translateX(0%) !important;
+  opacity: 1 !important;
+  @media (prefers-reduced-motion: reduce) {
+    transition: all 0s cubic-bezier(.19,1,.22,1);
+  }
+}
