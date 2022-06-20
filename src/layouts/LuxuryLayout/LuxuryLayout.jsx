@@ -29,13 +29,13 @@ const LuxuryLayout = ({children, baseUrl, slug}) => {
         {data && labels && 
         <div className={styles.LuxuryLayout}>
              <section>
-             <Header data={data.header} language={data.language} social={data.social} selector={refFooter} locale={data.locale} labels={labels} slugPage={slug}/>  
+             <Header data={data.link} language={data.language} social={data.social} selector={refFooter} locale={data.locale} labels={labels} slugPage={slug}/>  
            </section> 
          <div id="main" className={styles.content}>
             {children}
         </div>
         <section ref={refFooter}>
-          <Footer data={data.footer} locale={data.locale} labels={labels} slugPage={slug} />  
+          <Footer link={data.link} data={data.footer} locale={data.locale} labels={labels}  social={data.social}  slugPage={slug} />  
           </section> 
         </div>}
         </>

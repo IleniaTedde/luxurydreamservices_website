@@ -67,7 +67,7 @@ const Header = ({ data, language, selector, locale, labels, slugPage, social }) 
                 </div>
 
                 <div className={styles.containerDx}>
-                    {data && data.link && data.link.map((el, i) => {
+                    {data && data.map((el, i) => {
                         if (i === 0) {
                             return
                         }

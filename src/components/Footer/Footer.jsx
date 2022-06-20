@@ -1,7 +1,17 @@
 import styles from "./Footer.module.scss";
 import React, { useEffect, useState, useCallback, useRef, useContext } from "react";
+import Social from "../Social/Social"
 
-const Footer = ({data, locale, slugPage}) => {
+const Footer = ({link, data, locale, labels, social, slugPage}) => {
+
+ const topFooter = useRef(null);
+
+    const scroll = () => {
+        window.scrollTo({
+            top: topFooter.current.offsetTop - 200,
+            behavior: 'smooth'
+        })
+    };
 
     useEffect(() => {
         // animateThis();
@@ -21,10 +31,36 @@ const Footer = ({data, locale, slugPage}) => {
 
     return (
         <>
-        <footer className={styles.Footer}>
+        <footer ref={topFooter} className={styles.Footer}>
          <div className={`${styles.form} centeredSection`}>FORM</div>
          <hr className="lines"></hr>
-         <div className={`${styles.footer} centeredSection`}>{data.name}</div>
+         <div className={`${styles.footer} centeredSection`}>
+            <div className={styles.container2columns}>
+            <div className={styles.info}>
+            {data.name && <li>{data.name}</li> }
+             {data.address &&  <li>{data.address}</li> }
+              {data.number && <li>{labels && labels.labelTel && labels.labelTel}{labels && labels.labelTel && ': '}{data.number}</li> }
+            </div>
+            <div className={styles.link}>
+                {link && link.length > 0 && link.map((d,i) => {
+                    if(i===0) {
+                        return
+                    }
+                    else 
+                   return <li
+                     key={`link-footer-${i}`} >
+                    <a href={'/' + locale + d.url} target={"_self"} title={d.slug}>
+                       {d.slug} </a>
+                        </li>
+                })}
+         {labels && labels.labelForm &&  <button onClick={() => scroll()}><span className={styles.labelForm}>{labels.labelForm}</span></button> } 
+            </div>
+            </div>
+            <div className={styles.social}>
+            <Social social={social} />
+            </div>
+
+            </div>
          <hr className="lines"></hr>
          <div className={`${styles.lowFooter} centeredSection`}>
           <nav>
