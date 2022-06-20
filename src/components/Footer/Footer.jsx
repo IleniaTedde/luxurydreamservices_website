@@ -1,6 +1,7 @@
 import styles from "./Footer.module.scss";
 import React, { useEffect, useState, useCallback, useRef, useContext } from "react";
-import Social from "../Social/Social"
+import Social from "../Social/Social";
+import logoHome from './../../assets/icons/lds_logo_oro.svg';
 
 const Footer = ({link, data, locale, labels, social, slugPage}) => {
 
@@ -44,7 +45,11 @@ const Footer = ({link, data, locale, labels, social, slugPage}) => {
             <div className={styles.link}>
                 {link && link.length > 0 && link.map((d,i) => {
                     if(i===0) {
-                        return
+                      return  <li className={styles.logo}
+                        key={`logo-footer`} >
+                    <a href={`/${locale}/`}>
+                      {<img key={"logo header home"} className={styles.logoImg} src={logoHome} alt="logo home" />} 
+                    </a>  </li>
                     }
                     else 
                    return <li
@@ -59,8 +64,14 @@ const Footer = ({link, data, locale, labels, social, slugPage}) => {
             <div className={styles.social}>
             <Social social={social} />
             </div>
-
             </div>
+         <hr className={styles.linesMobile + " lines"}></hr>
+            <div className={`${styles.infoMobile} centeredSection `}>
+            {data.name && <li>{data.name}</li> }
+             {data.address &&  <li>{data.address}</li> }
+              {data.number && <li>{labels && labels.labelTel && labels.labelTel}{labels && labels.labelTel && ': '}{data.number}</li> }
+            </div>
+
          <hr className="lines"></hr>
          <div className={`${styles.lowFooter} centeredSection`}>
           <nav>
