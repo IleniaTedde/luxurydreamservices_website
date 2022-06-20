@@ -82,16 +82,19 @@
             {
               "slug" : "Privacy notice" ,
               "url": "/privacy-notice"
-            },
-            {
-              "slug" : "Sitemap" ,
-              "url": "/sitemap"
-            },
-            {
-              "slug" : "Accessibility" ,
-              "url": "/accessibility"
             }
-        ]
+        ],
+        "form": {
+          "title" : "<p>Any desire?</p><p>Ask now for your dream.</p>",
+          "subtitle" : "If you have a dream, just write us your idea. We will be glad to accommodate your request in the best possible way.",
+          "field" : {
+            "name" : "Name",
+            "surname" : "Surname",
+            "mail" : "E-mail",
+            "number" : "Phone number",
+            "message" : "Your message"
+          }
+        }
       },
       "social": [
         {
@@ -128,7 +131,9 @@
     },
     "labels" : {
       "labelForm" : "Your custom request",
-      "labelTel" : "Tel"
+      "labelTel" : "Tel",
+      "send" : "Send",
+      "conditions":"Termini e condizioni"
     },
     "home": {
             "page" : "/", 

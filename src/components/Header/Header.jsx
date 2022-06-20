@@ -76,13 +76,13 @@ const Header = ({ data, language, selector, locale, labels, slugPage, social }) 
                                 <Link key={"headerLink " + i}
                                     className={`${styles.link} ${('/' + slugPage) === (el.url) ? styles.linkSelected : ''}`}
                                     to={el && '/' + locale + el.url}>
-                                    <span onClick={() => setSlugFn(el.url)}>{el && el.slug}
+                                    <span onClick={() => setSlugFn(el.url)} dangerouslySetInnerHTML={{ __html: el && el.slug }}>
                                     </span>
                                 </Link>
                             )
                         }
                     })}
-                  {labels && labels.labelForm &&  <button onClick={() => scroll()}><span className={styles.labelForm}>{labels.labelForm}</span></button> } 
+                  {labels && labels.labelForm &&  <button onClick={() => scroll()}><span className={styles.labelForm} dangerouslySetInnerHTML={{ __html: labels.labelForm }}></span></button> } 
 
                     {language && language.map((el, i) => {
                         return <div key={'language ' + i} className={`${styles.language} ${el.slug === locale ? styles.languageSelected : ''}`}>{el.slug}</div>

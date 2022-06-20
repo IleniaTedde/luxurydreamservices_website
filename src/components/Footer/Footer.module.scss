@@ -7,21 +7,46 @@
     display: flex;
     flex-direction: column;
     color: map.get($theme-colors, "gold");
-    .form {
+    .formContainer {
+      padding-top: 11.438rem;
       width: 100%;
-      height: 50vh;
-      @include noto-semi-bold;
+      .title {
+        @include noto-semi-bold;
+        font-weight: 732 !important;
+        font-size: 5rem;
+       line-height: 4.5rem;
+      }
+      .subtitle {
+        color: map.get($theme-colors, "grey");
+        @include montserrat-regular;
+        font-size: 1rem;
+        margin-top: 3rem;
+      }
+      .form {
+        margin-top: 7rem;
+        
+      }
     }
     .footer {
       width: 100%;
       .container2columns {
         width: 100%;
         display: flex;
+        align-items: end;
         justify-content: space-between;
-        @include breakpoint-under('md') {
+        @include breakpoint-under('lg') {
           display: block;
           width: fit-content;
           margin: auto;
+         }
+
+         .interContainer {
+          display: flex;
+          gap:2rem;
+          align-items: end;
+          @include breakpoint-under('lg') {
+            display: none;
+          }
          }
 
         .info {
@@ -30,17 +55,14 @@
             margin-bottom: 0.5rem;
           }
            height: fit-content;
-          @include breakpoint-under('md') {
-            display: none;
-          }
         }
          .link {
-          @include breakpoint-under('md') {
+          @include breakpoint-under('lg') {
             text-align: center;
            }
           .logo {
             display: none;
-             @include breakpoint-under('md') {
+             @include breakpoint-under('lg') {
               display: block;
              }
 
@@ -79,7 +101,7 @@
             margin-bottom: 0.5rem;
             color: map.get($theme-colors, "gold");
             font-size: 0.875rem;
-            @include breakpoint-under('md') {
+            @include breakpoint-under('lg') {
               text-align: center;
               margin-bottom: 1.563rem;
              }
@@ -98,7 +120,7 @@
         justify-content: flex-end;
         margin-top: 2.875rem;
         margin-bottom: 1rem;
-        @include breakpoint-under('md') {
+        @include breakpoint-under('lg') {
          justify-content: center;
          }
         svg {
@@ -118,25 +140,36 @@
     }
     .linesMobile {
       display: none;
-      @include breakpoint-under('md') {
+      @include breakpoint-under('lg') {
         display: block;
       }
     }
-    .infoMobile {
-      @include montserrat-regular;
-      font-size: 1rem;
-      width: fit-content !important;
-      margin: auto;
-      li {
-        list-style: none;
-        margin-bottom: 0.5rem;
+    .interContainerMobile {
+      .logo {
+        margin-bottom: 1.5rem; 
+        .logoImg {
+          position: relative;
+          height: auto;
+          min-width: 100px !important;
+          max-width: 120px;
+        }
       }
-       height: fit-content;
-       display: none;
-      @include breakpoint-under('md') {
-        display: block;
-      }
-  }
+      .infoMobile {
+        @include montserrat-regular;
+        font-size: 1rem;
+        width: fit-content !important;
+        li {
+          list-style: none;
+          margin-bottom: 0.5rem;
+        }
+         height: fit-content;
+         display: none;
+        @include breakpoint-under('lg') {
+          display: block;
+        }
+    }
+    }
+
     .lowFooter {
       width: 100%;
       nav {
