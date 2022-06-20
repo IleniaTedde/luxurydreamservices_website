@@ -75,7 +75,25 @@
       "footer": {
         "name": "Luxury Dream Services SA",
         "address": "Via Cantonale 3, 6900 Lugano - Switzerland",
-        "number" : "Tel: +41 91 210 40 30"
+        "number" : "Tel: +41 91 210 40 30",
+        "lowFooter" : [
+            {
+              "slug" : "Terms of Use" ,
+              "url": "/terms-of-use"
+            },
+            {
+              "slug" : "Privacy notice" ,
+              "url": "/privacy-notice"
+            },
+            {
+              "slug" : "Sitemap" ,
+              "url": "/sitemap"
+            },
+            {
+              "slug" : "Accessibility" ,
+              "url": "/accessibility"
+            }
+        ]
       },
       "social": [
         {

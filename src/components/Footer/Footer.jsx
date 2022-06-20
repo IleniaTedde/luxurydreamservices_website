@@ -19,15 +19,35 @@ const Footer = ({data, locale, slugPage}) => {
             });
        };
 
-
     return (
         <>
         <footer className={styles.Footer}>
-         <div className={styles.form}>FORM</div>
+         <div className={`${styles.form} centeredSection`}>FORM</div>
          <hr className="lines"></hr>
-         <div className={styles.footer}>{data.name}</div>
+         <div className={`${styles.footer} centeredSection`}>{data.name}</div>
          <hr className="lines"></hr>
-         <div className={styles.bottomFooter}>BOTTOM FOOTER</div>
+         <div className={`${styles.lowFooter} centeredSection`}>
+          <nav>
+            <p>
+              <i>{new Date().getFullYear()}©Luxury Dream Services SA</i>
+            </p>
+             <ul className={`nav-menu ${styles.colophonMenu}`}>
+              {data && data.lowFooter &&
+                data.lowFooter.length > 0  &&
+                data.lowFooter.map((d, index) => (
+                  <li
+                    className={styles.copyItem}
+                    key={`colophon-menu-${index}`}
+                  >
+                    <a href={'/' + locale + d.url} target={"_self"} title={d.slug}>
+                      {d.slug} 
+                    </a>
+                  </li>
+                ))}
+            </ul> 
+          </nav>
+        </div>
+
         </footer>
         </>
 

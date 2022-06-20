@@ -4,33 +4,73 @@
 
 .Footer {
     background-color: map.get($theme-colors, "dark-blue");
-    min-height: 10vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    //@include poppins-bold;
-    @include noto-semi-bold;
     color: map.get($theme-colors, "gold");
-
-
     .form {
       width: 100%;
+      @include noto-semi-bold;
     }
     .footer {
       width: 100%;
     }
-    .bottomFooter {
+    .lowFooter {
       width: 100%;
+      nav {
+       display: flex;
+       margin: auto;
+       width: fit-content;
+       font-size: 1rem;
+       @include montserrat-regular;
+       @include breakpoint-under("lg") {
+        display: block;
+        text-align: center;
+        p {
+          margin-bottom: 0.9rem;
+        }
+       }
+      }
+      .colophonMenu {
+        li {
+          @include breakpoint-under('md') {
+            margin-bottom: 0.5rem;
+          }
+          a:hover {
+            text-decoration: underline;
+          }
+          @include breakpoint-under("lg") {
+            display: inline-block;
+          }
+        }
+        li + li::before {
+          content: " |";
+          margin-right: 0.5rem;
+          margin-left: 0.5rem;
+        }
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        @include breakpoint-under("lg") {
+          gap: 0;
+        }
+      }
+    
+    
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
     }
+
     hr {
-      background-color: rgba( map.get($theme-colors, "gold"), 0.5);
+      background-color: rgba( map.get($theme-colors, "gold"), 1);
       border: none;
       height: 1px;
       opacity: 0;
       width: 100%;
-      margin: 3rem auto;
+      margin: auto;
       transform: translateX(-100%);
       position: relative;
       @include breakpoint-under('lg'){
