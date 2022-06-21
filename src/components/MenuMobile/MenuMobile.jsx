@@ -47,13 +47,12 @@ const MenuMobile = ({isOpen, navs, onClickMenuItem, locale, labels, selector, la
            <div className={styles.flexEnd}>
             <div className={styles.languageContainer}>
            {language && language.map((el, i) => {
-                        return <div key={'language ' + i} className={`${styles.language} ${el.slug === locale ? styles.languageSelected : ''}`}>{el.slug}</div>
+                        return <div key={'languageMobile ' + i} className={`${styles.language} ${el.slug === locale ? styles.languageSelected : ''}`}>{el.slug}</div>
              })}
              </div>
             <div className={styles.social}>
             <Social social={social} />
             </div>
-        
           </div>
            </div>
           </div>

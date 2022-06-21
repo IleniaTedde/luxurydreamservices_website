@@ -26,7 +26,7 @@ const Social = ({social}) => {
             {social &&  social.length > 0 && social.map((d,i) => {
             return (
                 <>
-               {d.name == "instagram" && (
+               {d.name === "instagram" && (
                 <a key={`social-${d}`}
                    href={d.link.url}
                 target={d.link.target}
@@ -34,7 +34,7 @@ const Social = ({social}) => {
                   <FontAwesomeIcon icon={socialIconMapper['instagram']} />
                 </a>
                )}
-                {d.name == "linkedin" && (
+                {d.name === "linkedin" && (
                 <a key={`social-${d}`}
                    href={d.link.url}
                 target={d.link.target}
@@ -42,7 +42,7 @@ const Social = ({social}) => {
                   <FontAwesomeIcon icon={socialIconMapper['linkedin']} />
                 </a>
                )}
-                {d.name == "tiktok" && (
+                {d.name === "tiktok" && (
                 <a key={`social-${d}`}
                    href={d.link.url}
                 target={d.link.target}
@@ -50,7 +50,7 @@ const Social = ({social}) => {
                   <FontAwesomeIcon icon={socialIconMapper['tiktok']} />
                 </a>
                )}
-                {d.name == "twitter" && (
+                {d.name === "twitter" && (
                 <a key={`social-${d}`}
                    href={d.link.url}
                 target={d.link.target}
@@ -58,7 +58,7 @@ const Social = ({social}) => {
                   <FontAwesomeIcon icon={socialIconMapper['twitter']} />
                 </a>
                )}
-                 {d.name == "facebook" && (
+                 {d.name === "facebook" && (
                 <a key={`social-${d}`}
                    href={d.link.url}
                 target={d.link.target}
@@ -66,7 +66,7 @@ const Social = ({social}) => {
                   <FontAwesomeIcon icon={socialIconMapper['facebook']} />
                 </a>
                )}
-                {d.name == "youtube" && (
+                {d.name === "youtube" && (
                 <a key={`social-${d}`}
                    href={d.link.url}
                 target={d.link.target}

@@ -1,6 +1,7 @@
 @use "sass:map";
 @import "_variables";
 @import "media_queries";
+@import url('http://fonts.cdnfonts.com/css/photograph-signature');
 
 p, span, h1, h2, h3, h4, h5 ,h6 {
     background-color: transparent !important;
@@ -205,6 +206,15 @@ code {
   }
  }
 
+ .mainHome {
+  padding-top: 13rem !important;
+  @include breakpoint-under('lg'){
+    padding-top: 12rem !important;
+  }
+  @include breakpoint-under('sm'){
+    padding-top: 11rem !important;
+  }
+ }
  .mainWithBreadcrumb {
   padding-top: 9rem !important;
   @include breakpoint-under('lg'){
@@ -219,5 +229,88 @@ code {
   opacity: 1 !important;
   @media (prefers-reduced-motion: reduce) {
     transition: all 0s cubic-bezier(.19,1,.22,1);
+  }
+}
+
+// home 
+body {
+	background: #e3f2fd
+}
+
+.scrittaAnim {
+  height: 100px;
+  width: 800px;
+  overflow: hidden;
+  margin: auto;
+  svg {
+    // @include PhotographSignature;
+     font-family: 'Photograph Signature';
+     position: absolute; 
+     width: 100%; height: 100%;
+     fill:rgba(map.get($theme-colors, "gold"), 1); 
+     stroke: map.get($theme-colors, "gold");
+   }
+   svg {
+    text {
+      text-transform: uppercase;
+      position: relative;
+      animation: strokeAnim 5s;
+      stroke-width: 2;
+      font-size: 140px;
+    }
+   }
+
+
+  position: relative;
+  &::after {
+    content: '';
+   // background-image: linear-gradient(-90deg, transparent , map.get($theme-colors, "grey"));
+    background-color: map.get($theme-colors, "grey");
+    width: 800px;
+    height: 100px;
+    top: 0;
+    left: 0;
+    position: absolute;
+   animation: textOpacity 5s;
+  }
+}
+
+@keyframes textOpacity {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+  transform: translateX(100%);
+  }
+}
+@keyframes strokeAnim {
+	0%   {
+		fill:rgba(map.get($theme-colors, "gold"), 0); 
+    stroke: map.get($theme-colors, "gold");
+	//	stroke-dashoffset: 25%; 
+    stroke-dasharray: 0 50%; 
+    stroke-width: 2;
+	}
+
+	80%  {
+    fill:rgba(map.get($theme-colors, "gold"), 0); 
+    stroke: map.get($theme-colors, "gold"); 
+    stroke-width: 3; 
+  }
+	100% {
+		fill: map.get($theme-colors, "gold"); 
+    stroke: rgba(map.get($theme-colors, "gold"), 0); 
+	//	stroke-dashoffset: -25%; 
+    stroke-dasharray: 50% 0; 
+    stroke-width: 0;
+	}
+}
+
+.col-2 {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  div {
+    width: 50%;
   }
 }

@@ -88,12 +88,30 @@
           "title" : "<p>Any desire?</p><p>Ask now for your dream.</p>",
           "subtitle" : "If you have a dream, just write us your idea. We will be glad to accommodate your request in the best possible way.",
           "field" : {
-            "name" : "Name",
-            "surname" : "Surname",
-            "mail" : "E-mail",
-            "number" : "Phone number",
-            "message" : "Your message"
+          "name" : {
+            "label" : "Name",
+            "mandatory": true
+          },
+          "surname" : {
+            "label" : "Surname",
+            "mandatory": true
+          },
+          "mail" : {
+            "label" : "E-mail",
+            "mandatory": true
+          },
+          "number" : {
+            "label" : "Phone number",
+            "mandatory": false
+          },
+          "message" : {
+            "label" : "Your message",
+            "mandatory": false
           }
+         },
+         "sendMail" : "ileniat98@gmail.com",
+         "cc" : "provaCC.1@prova.com; provaCC.2@prova.com",
+         "subject": "Prova object footer form"
         }
       },
       "social": [

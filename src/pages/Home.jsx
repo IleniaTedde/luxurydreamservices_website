@@ -16,8 +16,19 @@ import { useEffect, useState } from "react";
     return (
         <>
          { api && api.seo && <title  dangerouslySetInnerHTML={{ __html: api.seo.title }}></title>  }
-         <div>   {api &&  api.data && 
-              <h2>{api.data.text}</h2>} 
+         <div className={'mainHome'}>  
+           {api &&  api.data && 
+         <>
+              <h2>{api.data.text}</h2>
+              {/* <div className='scrittaAnim'>
+              <svg viewBox="0 0 1320 300">
+              <text x="50%" y="50%" dy=".35em" textAnchor="middle">
+                Your tailored dream 
+              </text>
+            </svg>
+            </div> */}
+            </>
+            } 
               </div>
         </>
     );

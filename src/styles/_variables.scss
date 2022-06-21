@@ -28,6 +28,12 @@ $latest-gradient: (
 // Fonts
 //
 
+//Photograph Signature
+$PhotographSignature-font-family: "Photograph Signature";
+@mixin PhotographSignature {
+    font-family: $PhotographSignature-font-family;
+}
+
 //Noto Serif Display
 $noto-font-family: "Noto Serif Display Sans";
 $noto-fw-light: 300;
