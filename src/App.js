@@ -68,7 +68,8 @@ function App() {
 
    {locale && 
     <Router>
-        <Switch>    
+        <Switch>  
+        {/* <Redirect to={'/'+ locale + '/'} />   */}
            {data && data.map((el,i) => {
               return (
                 <Route key={"route " + el.url} exact path={'/' + locale + el.url}>

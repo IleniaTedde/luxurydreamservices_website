@@ -16,8 +16,8 @@ const Header = ({ data, language, selector, locale, labels, slugPage, social }) 
     const [ headerFixed, setHeaderFixed] = useState(true);
     const router = useRouter();
 
-   // console.log(router)
-   // console.log(router.pathname)
+    // console.log(router)
+    // console.log(router.pathname)
 
     const setSlugFn = (slug) => {
         setSlug(slug);
@@ -28,14 +28,13 @@ const Header = ({ data, language, selector, locale, labels, slugPage, social }) 
             behavior: 'smooth'
         })
     };
+  const [url,setUrl] = useState('');
 
 
     const setLanguage = (lang) => {
-    let langStorage =  localStorage.setItem('lang', lang);
-    window.location.reload();
-   // router.replace('en');
-    // const href = hreflang[lang];
-    // router.replace(href);
+     localStorage.setItem('lang', lang);
+     setUrl(`${window.location.origin}/${lang}`);
+       window.location.reload();
      };
 
     var lastScrollTop = 0;
@@ -108,7 +107,9 @@ const Header = ({ data, language, selector, locale, labels, slugPage, social }) 
                         key={'language ' + i} 
                         className={`${styles.language} ${el.slug === locale ? styles.languageSelected : ''}`}
                         onClick={() => setLanguage(el.slug)}>
-                            {el.slug}
+                            <a href={url}> 
+                                {el.slug}
+                                 </a>  
                             </button>
                     })}
 
