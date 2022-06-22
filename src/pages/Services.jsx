@@ -29,7 +29,8 @@ const Services = ({ slug, baseUrl }) => {
             <div>    {api && api.data && 
             <>
              <h2>{api.data.text}</h2>
-            <a href={'/' + locale + '/services/services-single'}> <h2>{'services single page'}</h2> </a>
+            {locale === 'en' && <a href={'/' + locale + '/services/services-single'}> <h2>{'services single page'}</h2> </a>}
+            {locale === 'it' && <a href={'/' + locale + '/servizi/servizi-single'}> <h2>{'services single page'}</h2> </a>}
             </> }
               </div>
         </>

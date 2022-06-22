@@ -12,6 +12,11 @@ const MenuMobile = ({isOpen, navs, onClickMenuItem, locale, labels, selector, la
             behavior: 'smooth'
         })
     };
+
+    const setLanguage = (lang) => {
+      let langStorage =  localStorage.setItem('lang', lang);
+      window.location.reload();
+       };
     return (
         <>
         <div className={`${ styles.MenuMobile} ${isOpen ? styles.open : ''}`}>
@@ -30,13 +35,13 @@ const MenuMobile = ({isOpen, navs, onClickMenuItem, locale, labels, selector, la
                     {d.slug}
                   </span>
                 </Link>
-                {d.items && d.items.map((sub,i) => {
+                 {d.items && d.items.map((sub,i) => {
                   return  <Link className={styles.menuMobileItem} key={`menumobile-${sub.slug}`} to={`${'/' + locale + sub.url}`} title={sub.slug} aria-label={sub.slug}>
                     <span onClick={onClickMenuItem}>
                     {sub.slug}
                     </span>
                     </Link>
-                })}
+                })} 
             </>
             }
         
@@ -47,7 +52,11 @@ const MenuMobile = ({isOpen, navs, onClickMenuItem, locale, labels, selector, la
            <div className={styles.flexEnd}>
             <div className={styles.languageContainer}>
            {language && language.map((el, i) => {
-                        return <div key={'languageMobile ' + i} className={`${styles.language} ${el.slug === locale ? styles.languageSelected : ''}`}>{el.slug}</div>
+                        return <button 
+                        key={'languageMobile ' + i} 
+                        className={`${styles.language} ${el.slug === locale ? styles.languageSelected : ''}`}
+                        onClick={() => setLanguage(el.slug)}>
+                        {el.slug}</button>
              })}
              </div>
             <div className={styles.social}>

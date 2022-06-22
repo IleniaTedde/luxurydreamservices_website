@@ -151,7 +151,7 @@
       "labelForm" : "Your custom request",
       "labelTel" : "Tel",
       "send" : "Send",
-      "conditions":"Termini e condizioni"
+      "conditions":"Terms and conditions"
     },
     "home": {
             "page" : "/", 
@@ -235,5 +235,4 @@
         "text" :  "services single page"
       }
     }
-
   }

@@ -96,6 +96,8 @@
       text-transform: uppercase;
       display: flex;
       .language {
+        @include montserrat-semi-bold;
+        font-size: 1.125rem;
         color: map.get($theme-colors, "gold");
         position: relative;
         margin-right: 1rem;
@@ -103,6 +105,7 @@
         cursor: pointer;
         height: fit-content;
         z-index: 3;
+        text-transform: uppercase;
         &::after {
           content: '';
           position: absolute;

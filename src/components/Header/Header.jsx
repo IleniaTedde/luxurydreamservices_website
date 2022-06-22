@@ -1,6 +1,11 @@
 import styles from "./Header.module.scss";
+import { useMemo } from "react";
+import queryString from "query-string";
 import React, { useEffect, useState, useCallback, useRef, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams,
+    useLocation,
+    useHistory,
+    useRouteMatch} from "react-router-dom";
 import logoHome from './../../assets/icons/lds_logo_oro.svg';
 import logo from './../../assets/icons/lds_logo_oro2.svg';
 import MenuMobile from "../MenuMobile/MenuMobile";
@@ -9,6 +14,10 @@ const Header = ({ data, language, selector, locale, labels, slugPage, social }) 
     const [slug, setSlug] = useState(null);
     const [ openBurgerMenu, setOpenBurgerMenu] = useState(false);
     const [ headerFixed, setHeaderFixed] = useState(true);
+    const router = useRouter();
+
+   // console.log(router)
+   // console.log(router.pathname)
 
     const setSlugFn = (slug) => {
         setSlug(slug);
@@ -19,6 +28,15 @@ const Header = ({ data, language, selector, locale, labels, slugPage, social }) 
             behavior: 'smooth'
         })
     };
+
+
+    const setLanguage = (lang) => {
+    let langStorage =  localStorage.setItem('lang', lang);
+    window.location.reload();
+   // router.replace('en');
+    // const href = hreflang[lang];
+    // router.replace(href);
+     };
 
     var lastScrollTop = 0;
     const scrollHandler = () => {
@@ -43,11 +61,12 @@ const Header = ({ data, language, selector, locale, labels, slugPage, social }) 
       };
     }, []);
 
+
     return (
         <>
              <MenuMobile
              isOpen={openBurgerMenu}
-             navs={data.link}
+             navs={data}
              onClickMenuItem={() => setOpenBurgerMenu(!openBurgerMenu)}
              locale={locale}
              labels={labels}
@@ -85,8 +104,14 @@ const Header = ({ data, language, selector, locale, labels, slugPage, social }) 
                   {labels && labels.labelForm &&  <button onClick={() => scroll()}><span className={styles.labelForm} dangerouslySetInnerHTML={{ __html: labels.labelForm }}></span></button> } 
 
                     {language && language.map((el, i) => {
-                        return <div key={'language ' + i} className={`${styles.language} ${el.slug === locale ? styles.languageSelected : ''}`}>{el.slug}</div>
+                        return <button 
+                        key={'language ' + i} 
+                        className={`${styles.language} ${el.slug === locale ? styles.languageSelected : ''}`}
+                        onClick={() => setLanguage(el.slug)}>
+                            {el.slug}
+                            </button>
                     })}
+
                 </div>
 
                 <div className={styles.burgerMenu}>
@@ -103,5 +128,35 @@ const Header = ({ data, language, selector, locale, labels, slugPage, social }) 
         </>
     );
 };
+
+// Hook
+export function useRouter() {
+  const params = useParams();
+  const location = useLocation();
+  const history = useHistory();
+  const match = useRouteMatch();
+  // Return our custom router object
+  // Memoize so that a new object is only returned if something changes
+  return useMemo(() => {
+    return {
+      // For convenience add push(), replace(), pathname at top level
+      push: history.push,
+      replace: history.replace,
+      pathname: location.pathname,
+      // Merge params and parsed query string into single "query" object
+      // so that they can be used interchangeably.
+      // Example: /:topic?sort=popular -> { topic: "react", sort: "popular" }
+      query: {
+        ...queryString.parse(location.search), // Convert string to object
+        ...params,
+      },
+      // Include match, location, history objects so we have
+      // access to extra React Router functionality if needed.
+      match,
+      location,
+      history,
+    };
+  }, [params, match, location, history]);
+}
 
 export default Header;

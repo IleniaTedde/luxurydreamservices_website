@@ -147,6 +147,9 @@
       }
       .language {
         margin-right: 1rem;
+        @include montserrat-semi-bold;
+        text-transform: uppercase;
+        font-size: 0.875rem;
         color: map.get($theme-colors, "gold");
         margin-top:2.875rem;
         position: relative;

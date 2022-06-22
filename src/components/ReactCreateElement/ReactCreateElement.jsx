@@ -10,8 +10,12 @@ import About from "../../pages/About";
 const Components = {
     "home": Home,
     "services": Services,
+    "servizi": Services,
     "services-single": ServicesSingle,
+    "servizi-single": ServicesSingle,
     "how-we-work": About,
+    "chi-siamo": About,
+
 }
 
 const ReactCreteElement = ({baseUrl, slug}) => {

@@ -1,0 +1,238 @@
+
+  { 
+    "layout" : {
+      "routes" : {
+        "link": [
+          {
+            "slug" : "home" ,
+            "url": "/"
+          },
+          {
+            "slug" : "servizi" ,
+            "url": "/servizi"
+          },
+          {
+            "slug" : "servizi-single" ,
+            "url": "/servizi/servizi-single"
+          },
+          {
+              "slug" : "holiday",
+              "url": "/servizi/holiday"
+          },
+          {
+              "slug" : "relocation",
+              "url": "/servizi/relocation"
+          },
+          {
+              "slug" : "business trip",
+              "url": "/servizi/business-trip"
+          },
+          {
+              "slug" : "locals",
+              "url": "/servizi/locals"
+          },
+          {
+            "slug" : "chi-siamo" ,
+            "url": "/chi-siamo"
+          }
+
+           ]
+      },
+      "link": [
+        {
+          "slug" : "home" ,
+          "url": "/"
+        },
+        {
+          "slug" : "servizi" ,
+          "url": "/servizi",
+          "items" : [
+            {
+              "slug" : "holiday",
+              "url": "/servizi/holiday"
+            },
+            {
+              "slug" : "relocation",
+              "url": "/servizi/relocation"
+            },
+            {
+              "slug" : "business trip",
+              "url": "/servizi/business-trip"
+            },
+            {
+              "slug" : "locals",
+              "url": "/servizi/locals"
+            }
+          ]
+        },
+        {
+          "slug" : "chi siamo" ,
+          "url": "/chi-siamo"
+        }
+         ],
+      "footer": {
+        "name": "Luxury Dream Services SA",
+        "address": "Via Cantonale 3, 6900 Lugano - Switzerland",
+        "number" : "+41 91 210 40 30",
+        "lowFooter" : [
+            {
+              "slug" : "Terms of Use" ,
+              "url": "/terms-of-use"
+            },
+            {
+              "slug" : "Privacy notice" ,
+              "url": "/privacy-notice"
+            }
+        ],
+        "form": {
+          "title" : "<p>Hai un desiderio? Aiutaci a realizzarlo.</p>",
+          "subtitle" : "Completa il form scrivendo nel messaggio le tue richieste speciali. Ti contatteremo al più presto.",
+          "field" : {
+          "name" : {
+            "label" : "Nome",
+            "mandatory": true
+          },
+          "surname" : {
+            "label" : "Cognome",
+            "mandatory": true
+          },
+          "mail" : {
+            "label" : "E-mail",
+            "mandatory": true
+          },
+          "number" : {
+            "label" : "Numero di telefono",
+            "mandatory": false
+          },
+          "message" : {
+            "label" : "Il tuo messaggio",
+            "mandatory": false
+          }
+         },
+         "sendMail" : "ileniat98@gmail.com",
+         "cc" : "provaCC.1@prova.com; provaCC.2@prova.com",
+         "subject": "Prova object footer form"
+        }
+      },
+      "social": [
+        {
+          "name": "instagram",
+          "link" : {
+            "url": "#",
+            "target" : "_blank"
+          }
+        },
+        {
+          "name": "linkedin",
+          "link" : {
+            "url": "#",
+            "target" : "_blank"
+          }
+        },
+        {
+          "name": "tiktok",
+          "link" : {
+            "url": "#",
+            "target" : "_blank"
+          }
+        }
+      ],
+      "locale" : "it",
+      "language": [ 
+        { 
+          "slug" : "en"
+        },
+        { 
+          "slug" : "it"
+        }
+      ]
+    },
+    "labels" : {
+      "labelForm" : "Your custom request",
+      "labelTel" : "Tel",
+      "send" : "Send",
+      "conditions":"Terms and conditions"
+    },
+    "home": {
+            "page" : "/", 
+            "seo" :{
+              "title": "Home | Luxury dream services"
+            }, 
+            "data" : {
+              "text" :  "homepage"
+            }
+           
+        },
+    "servizi": {
+            "page" : "/servizi",
+            "breadcrumb" : {
+                "locale" : "it",
+                "paths" : [
+                   {
+                    "label" : "Home",
+                    "path": "/it"
+                   },
+                   {
+                    "label" : "Servizi",
+                    "path": "/it/servizi"
+                   }
+                ]
+            },
+            "seo" :{
+              "title": "Servizi | Luxury dream services"
+            },
+            "data" : {
+              "text" :  "pagina servizi"
+            }
+      
+            },
+    "chi-siamo": {
+            "page" : "/chi-siamo",
+            "breadcrumb" : {
+              "locale" : "it",
+              "paths" : [
+                 {
+                  "label" : "Home",
+                  "path": "/it"
+                 },
+                 {
+                  "label" : "Chi siamo",
+                  "path": "/it/chi-siamo"
+                 }
+              ]
+          },
+            "seo" :{
+              "title": "Chi siamo | Luxury dream services"
+            }, 
+            "data" : {
+              "text" :  "chi siamo page"
+            }
+
+    },
+    "servizi-single": {
+      "page" : "/servizi/servizi-single",
+      "breadcrumb" : {
+          "locale" : "it",
+          "paths" : [
+             {
+              "label" : "Home",
+              "path": "/it"
+             },
+             {
+              "label" : "Servizi",
+              "path": "/it/servizi"
+             },
+             {
+              "label" : "Servizi single",
+              "path": "/it/servizi-single"
+             }
+          ]
+      },
+      "seo" :{
+        "title": "Servizi single | Luxury dream services"
+      },
+      "data" : {
+        "text" :  "servizi single page"
+      }
+    }
+  }

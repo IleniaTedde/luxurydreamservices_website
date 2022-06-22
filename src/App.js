@@ -7,16 +7,17 @@ import ReactCreateElement from './components/ReactCreateElement/ReactCreateEleme
 import Home from './pages/Home';
 import Services from './pages/Services';
 import ApplicationContext from './layouts/Context/ApplicationContextProvider';
+import { faUniregistry } from '@fortawesome/free-brands-svg-icons';
+import { setSelectionRange } from '@testing-library/user-event/dist/utils';
 
 
 
 function App() {
   //const baseUrl = `${process.env.LDS_BASEURL}`;
-  const baseUrl = 'http://localhost:8000';
 
-  const { languageProva } = useContext(ApplicationContext);
+  let langStorage =  localStorage.getItem('lang');
 
-
+  const baseUrl = langStorage === 'en' ? 'http://localhost:8000' : 'http://localhost:8001';
   const [data, setData] = useState(null);
   const [locale, setLocale] = useState(null);
   useEffect(() => {
@@ -27,15 +28,36 @@ function App() {
       .then(data => {
        { data && data.routes && data.routes.link &&
         setData(data.routes.link);
-        setLocale(data.locale);
+        setLocale(langStorage);
       }
       })
-  }, [])
+  }, [baseUrl])
 
-
-  if((window.location.pathname === '/' )&& locale) {
-    window.location.replace(`http://localhost:3000/${locale}`)
+  //  useEffect(() => {
+  //  // window.location.reload();
+  //  console.log('locale');
+  // console.log(locale);
+  // console.log(window.location.pathname);
+  //   if(window.location.pathname.includes('/it/')) {
+  //     console.log('a')
+  //     if(locale === 'en') {
+  //       console.log('b')
+  //       window.location.pathname.replace('/it/','/en/');
+  //     }
+  //   }
+  //   if(window.location.pathname.includes('/en/')) {
+  //     console.log('c')
+  //     if(locale === 'it') {
+  //       console.log('d')
+  //       window.location.pathname.replace('/en/','/it/');
+  //     }
+  //   }
+  //  },[locale]);
+   
+   if((window.location.pathname === '/' ) && locale) {
+    window.location.replace(`http://localhost:3000/${locale}`);
   }
+
   return (
     <>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
