@@ -10,6 +10,9 @@
 
   .formContainer {
     padding-top: 11.438rem;
+    @include breakpoint-under('md'){
+      padding-top: 5.188rem;
+    }
     width: 100%;
 
     .title {
@@ -17,6 +20,11 @@
       font-weight: 732 !important;
       font-size: 5rem;
       line-height: 4.5rem;
+
+      @include breakpoint-under('md') {
+        font-size: 3.125rem;
+        line-height: 3rem;
+      }
     }
 
     .subtitle {
@@ -29,6 +37,10 @@
     .form {
       margin-top: 7rem;
       margin-bottom: 5.375rem;
+      @include breakpoint-under('md'){
+        margin-top: 3rem;
+        margin-bottom: 4.375rem;
+      }
       @include montserrat-regular;
       font-size: 1rem;
 
@@ -39,13 +51,16 @@
           list-style: none;
         }
 
-        input {
+       textarea, input {
           margin-top: 1rem;
           width: 100%;
           background-color: transparent;
           border: none;
           border-bottom: 1px solid map.get($theme-colors, "gold");
           color: map.get($theme-colors, "grey");
+        }
+        .inputMessage {
+          height: 8rem;
         }
       }
 
@@ -59,6 +74,10 @@
         padding: 1.6rem 3.7rem;
         transition: all .4s cubic-bezier(.19, 1, .22, 1);
         cursor: not-allowed;
+        @include breakpoint-under('md'){
+          width: 100%;
+          padding: 2.3rem 3.7rem;
+        }
       }
 
       .allowed {
@@ -73,6 +92,9 @@
       .conditions {
         display: flex;
         height: fit-content;
+        @include breakpoint-under('md'){
+          margin-bottom: 2rem;
+        }
         input {
           position: absolute;
           opacity: 0;

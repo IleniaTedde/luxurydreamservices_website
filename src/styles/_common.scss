@@ -310,7 +310,14 @@ body {
   display: flex;
   justify-content: space-between;
   gap: 2rem;
+  @include breakpoint-under('md'){
+    display: block;
+    gap: 0rem;
+  }
   div {
     width: 50%;
+    @include breakpoint-under('md'){
+      width: 100%;
+    }
   }
 }

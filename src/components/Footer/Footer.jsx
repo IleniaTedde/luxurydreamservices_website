@@ -95,7 +95,7 @@ const Footer = ({ link, data, locale, labels, social, slugPage }) => {
                 {(data.form.field.name.mandatory = true) && <span className={nameMandatory ? styles.red : ''}>{'*'}</span>}
                 {data.form.field.name.label}</li>
                 <input type="text"
-                  autoFocus
+                  //autoFocus
                   placeholder={''}
                   value={name}
                   onChange={(e) => setName(e.target.value)}
@@ -136,11 +136,12 @@ const Footer = ({ link, data, locale, labels, social, slugPage }) => {
             <div className="col-1">
             <div className={styles.field}>
             <li>{data.form.field.message.label}</li>
-            <input type="text"
+            <textarea type="text"
                   placeholder={''}
                   value={message}
+                  className={styles.inputMessage}
                   onChange={(e) => setMessage(e.target.value)}
-                  ></input>
+                  ></textarea>
               </div>
             </div>
             <div className="col-2">
