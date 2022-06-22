@@ -24,13 +24,13 @@ const Header = ({ data, language, selector, locale, labels, slugPage, social }) 
     }
     const scroll = () => {
         window.scrollTo({
-            top: selector.current.offsetTop,
+            top: selector.current.offsetTop + 100,
             behavior: 'smooth'
         })
     };
   const [url,setUrl] = useState('');
 
-
+   //console.log(window.location)
     const setLanguage = (lang) => {
      localStorage.setItem('lang', lang);
      setUrl(`${window.location.origin}/${lang}`);

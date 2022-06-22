@@ -9,12 +9,22 @@ import About from "../../pages/About";
 
 const Components = {
     "home": Home,
-    "services": Services,
-    "servizi": Services,
-    "services-single": ServicesSingle,
-    "servizi-single": ServicesSingle,
+
     "how-we-work": About,
     "chi-siamo": About,
+
+    "services": Services,
+    "servizi": Services,
+
+    "holiday": ServicesSingle,
+    "holiday-ita": ServicesSingle,
+    "relocation": ServicesSingle,
+    "relocation-ita": ServicesSingle,
+    "business-trip": ServicesSingle,
+    "business-trip-ita": ServicesSingle,
+    "locals": ServicesSingle,
+    "locals-ita": ServicesSingle,
+
 
 }
 

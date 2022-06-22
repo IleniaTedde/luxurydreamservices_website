@@ -12,24 +12,20 @@
             "url": "/servizi"
           },
           {
-            "slug" : "servizi-single" ,
-            "url": "/servizi/servizi-single"
+              "slug" : "holiday-ita",
+              "url": "/servizi/holiday-ita"
           },
           {
-              "slug" : "holiday",
-              "url": "/servizi/holiday"
+              "slug" : "relocation-ita",
+              "url": "/servizi/relocation-ita"
           },
           {
-              "slug" : "relocation",
-              "url": "/servizi/relocation"
+              "slug" : "business-trip-ita",
+              "url": "/servizi/business-trip-ita"
           },
           {
-              "slug" : "business trip",
-              "url": "/servizi/business-trip"
-          },
-          {
-              "slug" : "locals",
-              "url": "/servizi/locals"
+              "slug" : "locals-ita",
+              "url": "/servizi/locals-ita"
           },
           {
             "slug" : "chi-siamo" ,
@@ -49,19 +45,19 @@
           "items" : [
             {
               "slug" : "holiday",
-              "url": "/servizi/holiday"
+              "url": "/servizi/holiday-ita"
             },
             {
               "slug" : "relocation",
-              "url": "/servizi/relocation"
+              "url": "/servizi/relocation-ita"
             },
             {
               "slug" : "business trip",
-              "url": "/servizi/business-trip"
+              "url": "/servizi/business-trip-ita"
             },
             {
               "slug" : "locals",
-              "url": "/servizi/locals"
+              "url": "/servizi/locals-ita"
             }
           ]
         },
@@ -209,8 +205,8 @@
             }
 
     },
-    "servizi-single": {
-      "page" : "/servizi/servizi-single",
+    "holiday-ita": {
+      "page" : "/servizi/holiday-ita",
       "breadcrumb" : {
           "locale" : "it",
           "paths" : [
@@ -223,16 +219,94 @@
               "path": "/it/servizi"
              },
              {
-              "label" : "Servizi single",
-              "path": "/it/servizi-single"
+              "label" : "Holiday ita",
+              "path": "/it/holiday-ita"
              }
           ]
       },
       "seo" :{
-        "title": "Servizi single | Luxury dream services"
+        "title": "Holiday ita | Luxury dream services"
       },
       "data" : {
-        "text" :  "servizi single page"
+        "text" :  "holiday ita page"
+      }
+    },
+    "relocation-ita": {
+      "page" : "/servizi/relocation-ita",
+      "breadcrumb" : {
+          "locale" : "it",
+          "paths" : [
+             {
+              "label" : "Home",
+              "path": "/it"
+             },
+             {
+              "label" : "Servizi",
+              "path": "/it/servizi"
+             },
+             {
+              "label" : "Relocation ita",
+              "path": "/it/relocation-ita"
+             }
+          ]
+      },
+      "seo" :{
+        "title": "Relocation ita | Luxury dream services"
+      },
+      "data" : {
+        "text" :  "relocation ita page"
+      }
+    },
+    "business-trip-ita": {
+      "page" : "/servizi/business-trip-ita",
+      "breadcrumb" : {
+          "locale" : "it",
+          "paths" : [
+             {
+              "label" : "Home",
+              "path": "/it"
+             },
+             {
+              "label" : "Servizi",
+              "path": "/it/servizi"
+             },
+             {
+              "label" : "Business trip ita",
+              "path": "/it/business-trip-ita"
+             }
+          ]
+      },
+      "seo" :{
+        "title": "Business trip ita | Luxury dream services"
+      },
+      "data" : {
+        "text" :  "business-trip ita page"
+      }
+    },
+    "locals-ita": {
+      "page" : "/servizi/locals-ita",
+      "breadcrumb" : {
+          "locale" : "it",
+          "paths" : [
+             {
+              "label" : "Home",
+              "path": "/it"
+             },
+             {
+              "label" : "Servizi",
+              "path": "/it/servizi"
+             },
+             {
+              "label" : "Locals ita",
+              "path": "/it/locals-ita"
+             }
+          ]
+      },
+      "seo" :{
+        "title": "Locals ita | Luxury dream services"
+      },
+      "data" : {
+        "text" :  "locals ita page"
       }
     }
   }

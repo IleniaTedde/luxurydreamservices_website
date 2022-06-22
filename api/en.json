@@ -12,10 +12,6 @@
             "url": "/services"
           },
           {
-            "slug" : "services-single" ,
-            "url": "/services/services-single"
-          },
-          {
               "slug" : "holiday",
               "url": "/services/holiday"
           },
@@ -24,7 +20,7 @@
               "url": "/services/relocation"
           },
           {
-              "slug" : "business trip",
+              "slug" : "business-trip",
               "url": "/services/business-trip"
           },
           {
@@ -208,9 +204,9 @@
               "text" :  "how we work page"
             }
 
-    },
-    "services-single": {
-      "page" : "/services/services-single",
+    },   
+    "holiday": {
+      "page" : "/services/holiday",
       "breadcrumb" : {
           "locale" : "en",
           "paths" : [
@@ -223,16 +219,94 @@
               "path": "/en/services"
              },
              {
-              "label" : "Services single",
-              "path": "/en/services-single"
+              "label" : "Holiday",
+              "path": "/en/holiday"
              }
           ]
       },
       "seo" :{
-        "title": "Services single | Luxury dream services"
+        "title": "Holiday | Luxury dream services"
       },
       "data" : {
-        "text" :  "services single page"
+        "text" :  "holiday page"
+      }
+    },
+    "relocation": {
+      "page" : "/services/relocation",
+      "breadcrumb" : {
+          "locale" : "en",
+          "paths" : [
+             {
+              "label" : "Home",
+              "path": "/en"
+             },
+             {
+              "label" : "Services",
+              "path": "/en/services"
+             },
+             {
+              "label" : "Relocation",
+              "path": "/en/relocation"
+             }
+          ]
+      },
+      "seo" :{
+        "title": "Relocation | Luxury dream services"
+      },
+      "data" : {
+        "text" :  "relocation page"
+      }
+    },
+    "business-trip": {
+      "page" : "/services/business-trip",
+      "breadcrumb" : {
+          "locale" : "en",
+          "paths" : [
+             {
+              "label" : "Home",
+              "path": "/en"
+             },
+             {
+              "label" : "Services",
+              "path": "/en/services"
+             },
+             {
+              "label" : "Business trip",
+              "path": "/en/business-trip"
+             }
+          ]
+      },
+      "seo" :{
+        "title": "Business trip | Luxury dream services"
+      },
+      "data" : {
+        "text" :  "business-trip page"
+      }
+    },
+    "locals": {
+      "page" : "/services/locals",
+      "breadcrumb" : {
+          "locale" : "en",
+          "paths" : [
+             {
+              "label" : "Home",
+              "path": "/en"
+             },
+             {
+              "label" : "Services",
+              "path": "/en/services"
+             },
+             {
+              "label" : "Locals",
+              "path": "/en/locals"
+             }
+          ]
+      },
+      "seo" :{
+        "title": "Locals | Luxury dream services"
+      },
+      "data" : {
+        "text" :  "locals page"
       }
     }
   }

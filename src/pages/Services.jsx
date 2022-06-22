@@ -5,6 +5,7 @@ const Services = ({ slug, baseUrl }) => {
     
     const [api, setApi] = useState(null);
     const [locale, setLocale] = useState(null);
+    const [link, setLink] = useState(null);
     useEffect(() => {
         fetch(`${baseUrl}/${slug}`)
             .then(res => {
@@ -20,17 +21,27 @@ const Services = ({ slug, baseUrl }) => {
             })
             .then(data => {
                 setLocale(data.locale);
+                setLink(data.link);
             })
     }, [])
 
+    const slugPage = window.location.pathname.replace('/'+locale+'/','');
     return (
         <>
             {api && api.seo && <title dangerouslySetInnerHTML={{ __html: api.seo.title }} />}
             <div>    {api && api.data && 
             <>
              <h2>{api.data.text}</h2>
-            {locale === 'en' && <a href={'/' + locale + '/services/services-single'}> <h2>{'services single page'}</h2> </a>}
-            {locale === 'it' && <a href={'/' + locale + '/servizi/servizi-single'}> <h2>{'services single page'}</h2> </a>}
+              { link && link.length > 0 && link.map((e,i) => {
+                   if(e.slug === slugPage) {
+                   return <div key={'sub' + e} >
+                    {e.items && e.items.length > 0 && e.items.map((el, index) => {
+                        return <a key={'sub' + el.slug} style={{display: 'flex'}} href={'/' + locale + el.url}>{el.slug}</a>
+                    })} 
+                   </div> 
+                   }
+             })
+             } 
             </> }
               </div>
         </>
