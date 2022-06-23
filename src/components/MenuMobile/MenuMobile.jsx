@@ -13,9 +13,11 @@ const MenuMobile = ({isOpen, navs, onClickMenuItem, locale, labels, selector, la
         })
     };
 
+    const [url,setUrl] = useState('');
+
     const setLanguage = (lang) => {
-      let langStorage =  localStorage.setItem('lang', lang);
-      window.location.reload();
+      localStorage.setItem('lang', lang);
+      setUrl(`${window.location.origin}/${lang}/`);
        };
     return (
         <>
@@ -58,7 +60,10 @@ const MenuMobile = ({isOpen, navs, onClickMenuItem, locale, labels, selector, la
                         key={'languageMobile ' + i} 
                         className={`${styles.language} ${el.slug === locale ? styles.languageSelected : ''}`}
                         onClick={() => setLanguage(el.slug)}>
-                        {el.slug}</button>
+                          <a href={url}> 
+                            {el.slug}
+                              </a>
+                         </button>
              })}
              </div>
             <div className={styles.social}>

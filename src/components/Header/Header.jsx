@@ -33,8 +33,7 @@ const Header = ({ data, language, selector, locale, labels, slugPage, social }) 
    //console.log(window.location)
     const setLanguage = (lang) => {
      localStorage.setItem('lang', lang);
-     setUrl(`${window.location.origin}/${lang}`);
-       window.location.reload();
+     setUrl(`${window.location.origin}/${lang}/`);
      };
 
     var lastScrollTop = 0;
@@ -108,7 +107,8 @@ const Header = ({ data, language, selector, locale, labels, slugPage, social }) 
                        {el.slug && <button 
                         key={'language ' + i} 
                         className={`${styles.language} ${el.slug === locale ? styles.languageSelected : ''}`}
-                        onClick={() => setLanguage(el.slug)}>
+                        onClick={() => setLanguage(el.slug)}
+                       >
                             <a href={url}> 
                                 {el.slug}
                                  </a>  
