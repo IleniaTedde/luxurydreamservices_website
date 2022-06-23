@@ -65,13 +65,13 @@ const Header = ({ data, language, selector, locale, labels, slugPage, social }) 
         <>
              <MenuMobile
              isOpen={openBurgerMenu}
-             navs={data}
-             onClickMenuItem={() => setOpenBurgerMenu(!openBurgerMenu)}
-             locale={locale}
-             labels={labels}
-             language={language}
-             selector={selector}
-             social={social}
+              navs={data}
+              onClickMenuItem={() => setOpenBurgerMenu(!openBurgerMenu)}
+              locale={locale}
+              labels={labels}
+              language={language}
+              selector={selector}
+              social={social}
              /> 
             <header className={styles.Header}>
                 <div className={`${styles.headerContainer} ${(!headerFixed && !openBurgerMenu)  ? 'noHeaderFixed' : ' headerFixed'}`}>
@@ -90,29 +90,31 @@ const Header = ({ data, language, selector, locale, labels, slugPage, social }) 
                             return
                         }
                         else {
-                            return (
-                                <Link key={"headerLink " + i}
+                            return (<>
+                              { el.slug && el.url &&  <Link key={"headerLink " + i}
                                     className={`${styles.link} ${('/' + slugPage) === (el.url) ? styles.linkSelected : ''}`}
-                                    to={el && '/' + locale + el.url}>
-                                    <span onClick={() => setSlugFn(el.url)} dangerouslySetInnerHTML={{ __html: el && el.slug }}>
+                                    to={'/' + locale + el.url}>
+                                    <span onClick={() => setSlugFn(el.url)} dangerouslySetInnerHTML={{ __html: el.slug }}>
                                     </span>
-                                </Link>
+                                </Link> }
+                              </>
                             )
                         }
                     })}
                   {labels && labels.labelForm &&  <button onClick={() => scroll()}><span className={styles.labelForm} dangerouslySetInnerHTML={{ __html: labels.labelForm }}></span></button> } 
 
-                    {language && language.map((el, i) => {
-                        return <button 
+                  {language && language.map((el, i) => {
+                        return <>
+                       {el.slug && <button 
                         key={'language ' + i} 
                         className={`${styles.language} ${el.slug === locale ? styles.languageSelected : ''}`}
                         onClick={() => setLanguage(el.slug)}>
                             <a href={url}> 
                                 {el.slug}
                                  </a>  
-                            </button>
+                            </button>}
+                         </>
                     })}
-
                 </div>
 
                 <div className={styles.burgerMenu}>

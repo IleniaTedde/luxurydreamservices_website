@@ -144,10 +144,10 @@
       ]
     },
     "labels" : {
-      "labelForm" : "Your custom request",
+      "labelForm" : "La tua richiesta",
       "labelTel" : "Tel",
-      "send" : "Send",
-      "conditions":"Terms and conditions"
+      "send" : "Invia",
+      "conditions":"Termini e condizioni"
     },
     "home": {
             "page" : "/", 

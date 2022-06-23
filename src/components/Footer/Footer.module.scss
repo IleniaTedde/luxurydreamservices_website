@@ -65,15 +65,14 @@
         }
       }
 
-      .red {
-        color: red;
-      }
-
       .send {
         border: 1px solid map.get($theme-colors, "gold");
         color: map.get($theme-colors, "gold");
         padding: 1.6rem 3.7rem;
         transition: all .4s cubic-bezier(.19, 1, .22, 1);
+        @include montserrat-semi-bold;
+        font-size: 0.875rem;
+        text-transform: uppercase;
         cursor: not-allowed;
         @include breakpoint-under('md'){
           width: 100%;
@@ -134,7 +133,6 @@
           cursor: pointer;
         }
       }
-
 
     }
   }
@@ -412,10 +410,4 @@
       margin: 1rem auto;
     }
   }
-}
-
-.submit {
-  background-color: red;
-  width: 30px;
-  height: 30px;
 }

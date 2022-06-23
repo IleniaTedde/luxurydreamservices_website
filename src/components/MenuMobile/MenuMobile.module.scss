@@ -137,10 +137,14 @@
       }
     }
 
-    .social {
-      svg path {
-        stroke: #84754E;
-        fill: #84754E;
+    .social { 
+      svg {
+          height:25px;
+          margin-right: 3px;
+        path {
+          stroke: #84754E;
+          fill: #84754E;
+        }
       }
 
     }

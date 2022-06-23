@@ -81,98 +81,111 @@ const Footer = ({ link, data, locale, labels, social, slugPage }) => {
 
   return (
     <>
-      <footer ref={topFooter} className={styles.Footer}>
+      <footer ref={topFooter} className={styles.Footer}>   
+                
+        {/* form */}
+
         <div className={`${styles.formContainer} centeredSection`}>
           {data.form && data.form.title && <div className={styles.title} dangerouslySetInnerHTML={{ __html: data.form.title }}>
           </div>}
           {data.form && data.form.subtitle && <div className={styles.subtitle} dangerouslySetInnerHTML={{ __html: data.form.subtitle }}>
           </div>}
-
+          
+          <form method="POST" action="mailto:ileniat98@gmail.com" encType="text/plain">
           <div className={styles.form}>
             <div className="col-2">
               <div className={styles.field}>
                 <li>
-                {(data.form.field.name.mandatory = true) && <span className={nameMandatory ? styles.red : ''}>{'*'}</span>}
-                {data.form.field.name.label}</li>
+                {data?.form?.field?.name?.mandatory && <span>{'*'}</span>}
+                {data?.form?.field?.name?.label}</li>
                 <input type="text"
                   //autoFocus
                   placeholder={''}
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                  // name="name"  
+                  required
                   ></input>
               </div>
               <div className={styles.field}>
                 <li>
-                {data.form.field.surname.mandatory && <span className={surnameMandatory ? styles.red : ''}>{'*'}</span>}
-                {data.form.field.surname.label}</li>
+                {data?.form?.field?.surname?.mandatory && <span>{'*'}</span>}
+                {data?.form?.field?.surname?.label}</li>
                 <input type="text"
                   placeholder={''}
                   value={surname}
                   onChange={(e) => setSurname(e.target.value)}
+                //  name="surname"  
+                  required
                   ></input>
               </div>
             </div>
+
             <div className="col-2">
             <div className={styles.field}>
                 <li>
-                 {data.form.field.mail.mandatory && <span className={mailMandatory ? styles.red : ''}>{'*'}</span>}{data.form.field.mail.label}</li>
+                 {data?.form?.field?.mail?.mandatory && <span>{'*'}</span>}{data?.form?.field?.mail?.label}</li>
                 <input type="text"
                   placeholder={''}
                   value={mail}
                   onChange={(e) => setMail(e.target.value)}
+               //   name="mail"  
+                  required
                   ></input>
               </div>
               <div className={styles.field}>
                 <li>
-                {data.form.field.number.mandatory && <span>{'*'}</span>}{data.form.field.number.label}</li>
+                {data?.form?.field?.number?.mandatory && <span>{'*'}</span>}{data?.form?.field?.number?.label}</li>
                 <input type="text"
                   placeholder={''}
                   value={number}
                   onChange={(e) => setNumber(e.target.value)}
+                //  name="number"  
                   ></input>
               </div>
             </div>
+            
             <div className="col-1">
             <div className={styles.field}>
-            <li>{data.form.field.message.label}</li>
+            <li> {data?.form?.field?.message?.mandatory && <span>{'*'}</span>}{data?.form?.field?.message?.label}</li>
             <textarea type="text"
                   placeholder={''}
                   value={message}
                   className={styles.inputMessage}
                   onChange={(e) => setMessage(e.target.value)}
+                  //name="message"  
                   ></textarea>
               </div>
             </div>
+
             <div className="col-2">
-              <label className={`${styles.conditions} conditions`}>
+              {labels && labels.conditions && <label className={`${styles.conditions} conditions`}>
               <input type="checkbox" 
-                     onChange={(e) => setCheck(!check)}
+                  required
+                  onChange={(e) => setCheck(!check)}
                   />
               <span className={`${styles.checkmark} `}>
                 {check ? checkSvg : ''}
               </span>
              <span className={styles.label}>{labels.conditions}</span>
-              </label>
-            <button onClick={() => sendFn()} className={`${styles.send} ${send ? styles.allowed : ''}`}>
-             {send && <a href={`mailto: https://formsubmit.co/${data.form.sendMail} ?subject=${data.form.subject}&cc=${data.form.cc}&body=${data.form.field.name.label}%3A%20${name}%0D%0A${data.form.field.surname.label}%3A%20${surname}%0D%0A${data.form.field.number.label}%3A%20${number}%0D%0A${data.form.field.mail.label}%3A%20${mail}%0D%0A%0D%0A--------%0D%0A${data.form.field.message.label}%3A%20%0D%0D${message}0A%0D%0A`}>{labels.send}</a>}
-             {/* {send && <a href={`mailto:${data.form.sendMail} ?subject=${data.form.subject}&cc=${data.form.cc}&body=${data.form.field.name.label}%3A%20${name}%0D%0A${data.form.field.surname.label}%3A%20${surname}%0D%0A${data.form.field.number.label}%3A%20${number}%0D%0A${data.form.field.mail.label}%3A%20${mail}%0D%0A%0D%0A--------%0D%0A${data.form.field.message.label}%3A%20%0D%0D${message}0A%0D%0A`}>{labels.send}</a>} */}
-             {!send && labels.send }
+            </label> }
+            <button 
+            // type="submit"
+             onClick={() => sendFn()} 
+             className={`${styles.send} ${send ? styles.allowed : ''}`}
+            >
+         {send && <a href={`https://formsubmit.co/${data.form.sendMail} ?subject=${data.form.subject}&cc=${data.form.cc}&body=${data.form.field.name.label}%3A%20${name}%0D%0A${data.form.field.surname.label}%3A%20${surname}%0D%0A${data.form.field.number.label}%3A%20${number}%0D%0A${data.form.field.mail.label}%3A%20${mail}%0D%0A%0D%0A--------%0D%0A${data.form.field.message.label}%3A%20%0D%0D${message}0A%0D%0A`}>{ labels && labels.send && labels.send}</a>} 
+             {/* {send && <a href={`mailto:${data.form.sendMail} ?subject=${data.form.subject}&cc=${data.form.cc}&body=${data.form.field.name.label}%3A%20${name}%0D%0A${data.form.field.surname.label}%3A%20${surname}%0D%0A${data.form.field.number.label}%3A%20${number}%0D%0A${data.form.field.mail.label}%3A%20${mail}%0D%0A%0D%0A--------%0D%0A${data.form.field.message.label}%3A%20%0D%0D${message}0A%0D%0A`}>{ labels && labels.send &&  labels.send}</a>} */}
+               {!send && labels && labels.send &&  labels.send }  
+              {/* { labels && labels.send &&  labels.send }  */}
+            
               </button>
             </div>
-
-            {/* <form method="POST" action="https://formsubmit.co/ileniat98@gmail.com" subject='ciao' encType="text/plain">
-                  Oggetto del messaggio:<br />
-                  <input type="text" name="subject" /><br />
-                  Testo:<br />
-                  <textarea name="name " defaultValue={""} /><br />
-                  E-mail:<br />
-                  <input type="email" name="email"/><br />
-                  <button className={styles.submit} type="submit" defaultValue="Ivia Email" />
-                </form> */}
-
-
           </div>
+          </form>
         </div>
+
+        {/* footer */}
         <hr className={styles.linesMobile + " lines"}></hr>
         <div className={`${styles.interContainerMobile} centeredSection `}>
           <div className={styles.logo}
@@ -180,11 +193,11 @@ const Footer = ({ link, data, locale, labels, social, slugPage }) => {
             <a href={`/${locale}/`}>
               {<img key={"logo header home"} className={styles.logoImg} src={logoHome} alt="logo home" />}
             </a>  </div>
-          <div className={`${styles.infoMobile} `}>
+          {(data.name || data.address || data.number) && <div className={`${styles.infoMobile} `}>
             {data.name && <li dangerouslySetInnerHTML={{ __html: data.name }}></li>}
             {data.address && <li dangerouslySetInnerHTML={{ __html: data.address }}></li>}
             {data.number && <li>{labels && labels.labelTel && labels.labelTel}{labels && labels.labelTel && ': '}{data.number}</li>}
-          </div>
+          </div>}
         </div>
         <hr className="lines"></hr>
         <div className={`${styles.footer} centeredSection`}>
@@ -195,11 +208,11 @@ const Footer = ({ link, data, locale, labels, social, slugPage }) => {
                 <a href={`/${locale}/`}>
                   {<img key={"logo header home"} className={styles.logoImg} src={logoHome} alt="logo home" />}
                 </a>  </div>
-              <div className={styles.info}>
+            {(data.name || data.address || data.number) && <div className={styles.info}>
                 {data.name && <li dangerouslySetInnerHTML={{ __html: data.name }}></li>}
                 {data.address && <li dangerouslySetInnerHTML={{ __html: data.address }}></li>}
                 {data.number && <li>{labels && labels.labelTel && labels.labelTel}{labels && labels.labelTel && ': '}{data.number}</li>}
-              </div>
+              </div>}
             </div>
             <div className={styles.link}>
               {link && link.length > 0 && link.map((d, i) => {
@@ -207,11 +220,13 @@ const Footer = ({ link, data, locale, labels, social, slugPage }) => {
                   return
                 }
                 else
-                  return <li
+                  return <>
+                   {d.slug && d.url && <li
                     key={`link-footer-${i}`} >
                     <a href={'/' + locale + d.url} target={"_self"} title={d.slug} dangerouslySetInnerHTML={{ __html: d.slug }}>
                     </a>
-                  </li>
+                  </li>}
+                  </>
               })}
               {labels && labels.labelForm && <button onClick={() => scroll()}><span className={styles.labelForm} dangerouslySetInnerHTML={{ __html: labels.labelForm }}></span></button>}
             </div>
@@ -221,6 +236,7 @@ const Footer = ({ link, data, locale, labels, social, slugPage }) => {
           </div>
         </div>
 
+        {/* low footer */}
         <hr className="lines"></hr>
         <div className={`${styles.lowFooter} centeredSection`}>
           <nav>
@@ -231,12 +247,14 @@ const Footer = ({ link, data, locale, labels, social, slugPage }) => {
               {data && data.lowFooter &&
                 data.lowFooter.length > 0 &&
                 data.lowFooter.map((d, index) => (
-                  <li
+                  <>
+                  { d.url && d.slug && <li
                     className={styles.copyItem}
                     key={`colophon-menu-${index}`}>
                     <a href={'/' + locale + d.url} target={"_self"} title={d.slug} dangerouslySetInnerHTML={{ __html: d.slug }}>
                     </a>
-                  </li>
+                  </li>}
+                  </>
                 ))}
             </ul>
           </nav>

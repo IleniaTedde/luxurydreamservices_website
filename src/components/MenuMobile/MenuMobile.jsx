@@ -29,25 +29,27 @@ const MenuMobile = ({isOpen, navs, onClickMenuItem, locale, labels, selector, la
                 return
             }
             else {
-               return <>
-                <Link className={styles.menuMobileItem} key={`menumobile-${d.slug}`} to={`${'/' + locale + d.url}`} title={d.slug} aria-label={d.slug}>
+               return <div key={'items mobile ' + i}>
+             {d.slug && d.url &&   <Link className={styles.menuMobileItem} key={`menumobile-${d.slug}`} to={`${'/' + locale + d.url}`} title={d.slug} aria-label={d.slug}>
                   <span onClick={onClickMenuItem} >
                     {d.slug}
                   </span>
-                </Link>
+                </Link> }
                  {d.items && d.items.map((sub,i) => {
-                  return  <Link className={styles.menuMobileItem} key={`menumobile-${sub.slug}`} to={`${'/' + locale + sub.url}`} title={sub.slug} aria-label={sub.slug}>
+                  return  <>
+                {sub.slug && sub.url &&  <Link className={styles.menuMobileItem} key={`menumobile-${sub.slug}`} to={`${'/' + locale + sub.url}`} title={sub.slug} aria-label={sub.slug}>
                     <span onClick={onClickMenuItem}>
                     {sub.slug}
                     </span>
-                    </Link>
+                    </Link> }
+                    </>
                 })} 
-            </>
+            </div>
             }
         
            }
           )} 
-           <button onClick={() => scroll()}><span className={styles.labelForm}>{labels.labelForm}</span></button> 
+         { labels && labels.labelForm &&  <button onClick={() => scroll()}><span className={styles.labelForm}>{labels.labelForm}</span></button> }
            </div>
            <div className={styles.flexEnd}>
             <div className={styles.languageContainer}>
