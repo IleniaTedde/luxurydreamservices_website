@@ -112,7 +112,6 @@ const Footer = ({ link, data, locale, labels, social, slugPage }) => {
                   ></input>
               </div>
             </div>
-
             <div className="col-2">
             <div className={styles.field}>
                 <li>
@@ -155,10 +154,23 @@ const Footer = ({ link, data, locale, labels, social, slugPage }) => {
              <span className={styles.label}>{labels.conditions}</span>
               </label>
             <button onClick={() => sendFn()} className={`${styles.send} ${send ? styles.allowed : ''}`}>
-             {send && <a href={`mailto:${data.form.sendMail} ?subject=${data.form.subject}&cc=${data.form.cc}&body=${data.form.field.name.label}%3A%20${name}%0D%0A${data.form.field.surname.label}%3A%20${surname}%0D%0A${data.form.field.number.label}%3A%20${number}%0D%0A${data.form.field.mail.label}%3A%20${mail}%0D%0A%0D%0A--------%0D%0A${data.form.field.message.label}%3A%20%0D%0D${message}0A%0D%0A`}>{labels.send}</a>}
+             {send && <a href={`mailto: https://formsubmit.co/${data.form.sendMail} ?subject=${data.form.subject}&cc=${data.form.cc}&body=${data.form.field.name.label}%3A%20${name}%0D%0A${data.form.field.surname.label}%3A%20${surname}%0D%0A${data.form.field.number.label}%3A%20${number}%0D%0A${data.form.field.mail.label}%3A%20${mail}%0D%0A%0D%0A--------%0D%0A${data.form.field.message.label}%3A%20%0D%0D${message}0A%0D%0A`}>{labels.send}</a>}
+             {/* {send && <a href={`mailto:${data.form.sendMail} ?subject=${data.form.subject}&cc=${data.form.cc}&body=${data.form.field.name.label}%3A%20${name}%0D%0A${data.form.field.surname.label}%3A%20${surname}%0D%0A${data.form.field.number.label}%3A%20${number}%0D%0A${data.form.field.mail.label}%3A%20${mail}%0D%0A%0D%0A--------%0D%0A${data.form.field.message.label}%3A%20%0D%0D${message}0A%0D%0A`}>{labels.send}</a>} */}
              {!send && labels.send }
               </button>
             </div>
+
+            {/* <form method="POST" action="https://formsubmit.co/ileniat98@gmail.com" subject='ciao' encType="text/plain">
+                  Oggetto del messaggio:<br />
+                  <input type="text" name="subject" /><br />
+                  Testo:<br />
+                  <textarea name="name " defaultValue={""} /><br />
+                  E-mail:<br />
+                  <input type="email" name="email"/><br />
+                  <button className={styles.submit} type="submit" defaultValue="Ivia Email" />
+                </form> */}
+
+
           </div>
         </div>
         <hr className={styles.linesMobile + " lines"}></hr>

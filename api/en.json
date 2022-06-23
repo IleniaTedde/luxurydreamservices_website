@@ -105,7 +105,7 @@
             "mandatory": false
           }
          },
-         "sendMail" : "ileniat98@gmail.com",
+         "sendMail" : "prova@gmail.com",
          "cc" : "provaCC.1@prova.com; provaCC.2@prova.com",
          "subject": "Prova object footer form"
         }
