@@ -58,6 +58,7 @@
           border: none;
           border-bottom: 1px solid map.get($theme-colors, "gold");
           color: map.get($theme-colors, "grey");
+          @include montserrat-regular;
         }
         .inputMessage {
           height: 8rem;
