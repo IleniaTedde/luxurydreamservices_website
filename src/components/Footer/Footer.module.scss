@@ -176,6 +176,34 @@
         @include breakpoint-under('lg') {
           text-align: center;
         }
+        
+       button span , a {
+          position: relative;
+          padding-bottom: 2px;
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 1px;
+            background-color: map.get($theme-colors, "gold");
+            transition: all .4s cubic-bezier(.19,1,.22,1);
+            @media (prefers-reduced-motion: reduce) {
+                transition: all 0s;
+                transition-delay: 0ms;
+            }
+            @include breakpoint-under('lg'){
+              display: none;
+          }
+          }
+          &:hover {
+            &::after{
+                left: 0;
+                width: 100%;
+            }
+        }
+        }
 
         .logo {
           display: none;
@@ -383,4 +411,10 @@
       margin: 1rem auto;
     }
   }
+}
+
+.submit {
+  background-color: red;
+  width: 30px;
+  height: 30px;
 }
