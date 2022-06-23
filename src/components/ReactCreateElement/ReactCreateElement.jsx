@@ -2,10 +2,10 @@ import styles from "./ReactCreateElement.module.scss";
 import React, { useEffect, useState, useCallback, useRef, useContext } from "react";
 import { Link } from "react-router-dom";
 
-import Home from "../../pages/Home";
-import Services from "../../pages/Services";
-import ServicesSingle from "../../pages/ServicesSingle";
-import About from "../../pages/About";
+import Home from "../../pages/HomePage/Home";
+import Services from "../../pages/Services_page/Services";
+import ServiceSingle from "../../pages/ServiceSingle_page/ServiceSingle";
+import About from "../../pages/About_page/About";
 
 const Components = {
     "home": Home,
@@ -16,14 +16,14 @@ const Components = {
     "services": Services,
     "servizi": Services,
 
-    "holiday": ServicesSingle,
-    "holiday-ita": ServicesSingle,
-    "relocation": ServicesSingle,
-    "relocation-ita": ServicesSingle,
-    "business-trip": ServicesSingle,
-    "business-trip-ita": ServicesSingle,
-    "locals": ServicesSingle,
-    "locals-ita": ServicesSingle,
+    "holiday": ServiceSingle,
+    "holiday-ita": ServiceSingle,
+    "relocation": ServiceSingle,
+    "relocation-ita": ServiceSingle,
+    "business-trip": ServiceSingle,
+    "business-trip-ita": ServiceSingle,
+    "locals": ServiceSingle,
+    "locals-ita": ServiceSingle,
 
 
 }

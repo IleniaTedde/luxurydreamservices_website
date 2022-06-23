@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react";
-import Breadcrumb from "../components/Breadrumb/Breadcrumb";
+import Breadcrumb from "../../components/Breadrumb/Breadcrumb";
 const ServicesSingle = ({ slug, baseUrl }) => {
     
     const [api, setApi] = useState(null);

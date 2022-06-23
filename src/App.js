@@ -4,8 +4,6 @@ import LuxuryLayout from './layouts/LuxuryLayout/LuxuryLayout';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import React, { useState, useEffect, useContext } from "react";
 import ReactCreateElement from './components/ReactCreateElement/ReactCreateElement';
-import Home from './pages/Home';
-import Services from './pages/Services';
 import ApplicationContext from './layouts/Context/ApplicationContextProvider';
 import { faUniregistry } from '@fortawesome/free-brands-svg-icons';
 import { setSelectionRange } from '@testing-library/user-event/dist/utils';

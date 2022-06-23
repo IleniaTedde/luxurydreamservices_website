@@ -155,7 +155,45 @@
               "title": "Home | Luxury dream services"
             }, 
             "data" : {
-              "text" :  "homepage"
+              "hero": {
+                "pretitle": "Benvenuti su",
+                "title": "Luxury dream services",
+                "textLeft": "Vivi al massimo. Le nostre soluzioni, formulate espressamente per te, danno valore a ciò che è più prezioso: il tuo tempo.",
+                "textRight": "Non rinunciare ai tuoi desideri, con noi puoi realizzarli.",
+                "label": "Your tailored dream",
+                "slide": [
+                  {
+                    "image": {
+                      "url": "https://unsplash.it/457/686",
+                      "alt": "img"
+                    }
+                  },
+                  {
+                    "image": {
+                      "url": "https://unsplash.it/g/457/686",
+                      "alt": "img"
+                    }
+                  },
+                  {
+                    "image": {
+                      "url": "https://unsplash.it/457/686",
+                      "alt": "img"
+                    }
+                  },
+                  {
+                    "image": {
+                      "url": "https://unsplash.it/g/457/686",
+                      "alt": "img"
+                    }
+                  },
+                  {
+                    "image": {
+                      "url": "https://unsplash.it/457/686",
+                      "alt": "img"
+                    }
+                  }
+                ]
+              }
             }
            
         },
