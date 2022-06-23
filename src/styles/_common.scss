@@ -9,6 +9,39 @@ p, span, h1, h2, h3, h4, h5 ,h6 {
   }
 
   // Layouts
+  .largeCenteredSection {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  
+    max-width: 1380px;
+
+    margin-left: auto;
+    margin-right: auto;
+  
+    @include breakpoint-under("xxl") {
+    //  max-width: 1190px;
+      max-width: 93%;
+    }
+  
+    // @include breakpoint-under("xl") {
+    //   max-width: 950px;
+    // }
+  
+    // @include breakpoint-under("lg") {
+    //   max-width: 630px;
+    // }
+  
+    // @include breakpoint-under("md") {
+    //   max-width: 450px;
+    // }
+  
+    // @include breakpoint-under("sm") {
+    //   width: calc(100% - 100px) !important;
+    //   margin-left: auto;
+    //   margin-right: auto;
+    // }
+  }
+
 .centeredSection {
     padding-top: 2rem;
     padding-bottom: 2rem;

@@ -14,14 +14,13 @@ import ReviewCarousel from "../../components/ReviewCarousel/ReviewCarousel";
             setApi(data);
         })
     },[])
-    console.log(api)
     return (
         <>
          { api && api.seo && <title  dangerouslySetInnerHTML={{ __html: api.seo.title }}></title>  }
          <div className={'mainHome'}>  
-     {api && api.data &&  <>
-         <HeroHome api={api.data.hero}></HeroHome>
-         <ReviewCarousel  api={api.data.hero}/>
+     {api && api.data &&   <>
+        <HeroHome api={api.data.hero}></HeroHome> 
+           <ReviewCarousel  api={api.data.review}/> 
           </> } 
         </div>
        </>

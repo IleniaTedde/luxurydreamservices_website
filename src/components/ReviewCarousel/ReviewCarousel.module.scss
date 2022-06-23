@@ -1,0 +1,85 @@
+@use "sass:map";
+@import "../../styles/variables";
+@import "../../styles/media_queries";
+
+.ReviewCarousel {
+    margin: 0;
+    padding: 0;
+    background: map.get($theme-colors, "grey");
+    color: map.get($theme-colors, "gold");
+    @include montserrat-semi-bold;
+    font-size: 1.25rem;
+    width: 100%;
+    height: auto;
+    position: relative;
+
+    .carouselContainer {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        height: fit-content;
+        @include breakpoint-under('lg'){
+            display: block;
+            padding-top: 1rem;
+            div {
+                width: 100%;
+            }
+        }
+
+        @include breakpoint-under('lg'){
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+             width: 100%;
+        }
+        justify-content: center;
+        display: flex;
+        margin: auto;
+        position: relative;
+        img {
+            width: 100%;
+            height: auto;
+            @include breakpoint-under('xxl') {
+                width: 105%;
+            }
+            @include breakpoint-under('lg'){
+                width: 100%;
+                height: 100%;
+            }
+        }
+        }
+  .swiper {
+    color: map.get($theme-colors, "dark-blue");
+    @include montserrat-semi-bold;
+    font-size: 1.25rem;
+    overflow: hidden;
+    &::after {
+        content: attr(data-text);
+      background-color: map.get($theme-colors, "grey");
+     //  background-color: red;
+        width: 25rem;
+        height: 27rem;
+        position: absolute;
+        bottom: 6.2rem;
+        @include breakpoint-under('lg'){
+            bottom: 2rem;
+        }
+        left: 5.75rem;
+        z-index: 1;
+       }
+   }
+
+
+    }
+  
+  .desktop {
+    @include breakpoint-under('lg'){
+        display: none;
+    }
+  }
+
+  .mobile {
+    display: none;
+    @include breakpoint-under('lg'){
+        display: block;
+    }
+  }
