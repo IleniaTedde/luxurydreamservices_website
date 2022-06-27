@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import Breadcrumb from "../../components/Breadrumb/Breadcrumb";
 
-const About = ({ slug, baseUrl }) => {
+const About = ({ slug, baseUrl, labels }) => {
     
     const [api, setApi] = useState(null);
     useEffect(() => {

@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react";
 import Breadcrumb from "../../components/Breadrumb/Breadcrumb";
-const ServicesSingle = ({ slug, baseUrl }) => {
+const ServicesSingle = ({ slug, baseUrl, labels }) => {
     
     const [api, setApi] = useState(null);
     const [locale, setLocale] = useState(null);

@@ -147,7 +147,8 @@
       "labelForm" : "La tua richiesta",
       "labelTel" : "Tel",
       "send" : "Invia",
-      "conditions":"Termini e condizioni"
+      "conditions":"Termini e condizioni",
+      "labelsCeo": "CEO"
     },
     "home": {
             "page" : "/", 
@@ -200,31 +201,36 @@
                     "image": {
                       "url": "https://unsplash.it/1504/810",
                       "alt": "img"
-                    }
+                    },
+                    "text": " 1 - Luxury Dream Services fulfilled my wish to experience the finest of Bali and the positive energy this island has to offer. With a made-to-measure solutions, me and my wife enjoyed our temporary house with the best support from a dedicated staff."
                   },
                   {
                     "image": {
                       "url": "https://unsplash.it/g/1504/810",
                       "alt": "img"
-                    }
+                    },
+                    "text": " 2 - Luxury Dream Services fulfilled my wish to experience the finest of Bali and the positive energy this island has to offer. With a made-to-measure solutions, me and my wife enjoyed our temporary house with the best support from a dedicated staff."
                   },
                   {
                     "image": {
                       "url": "https://unsplash.it/1504/810",
                       "alt": "img"
-                    }
+                    },
+                    "text": " 3 - Luxury Dream Services fulfilled my wish to experience the finest of Bali and the positive energy this island has to offer. With a made-to-measure solutions, me and my wife enjoyed our temporary house with the best support from a dedicated staff."
                   },
                   {
                     "image": {
                       "url": "https://unsplash.it/g/1504/810",
                       "alt": "img"
-                    }
+                    },
+                    "text": " 4 - Luxury Dream Services fulfilled my wish to experience the finest of Bali and the positive energy this island has to offer. With a made-to-measure solutions, me and my wife enjoyed our temporary house with the best support from a dedicated staff."
                   },
                   {
                     "image": {
                       "url": "https://unsplash.it/1504/810",
                       "alt": "img"
-                    }
+                    },
+                    "text": " 5 - Luxury Dream Services fulfilled my wish to experience the finest of Bali and the positive energy this island has to offer. With a made-to-measure solutions, me and my wife enjoyed our temporary house with the best support from a dedicated staff."
                   }
                 ]
               }

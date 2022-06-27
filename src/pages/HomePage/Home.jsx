@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import HeroHome from "../../components/HeroHome/HeroHome";
 import ReviewCarousel from "../../components/ReviewCarousel/ReviewCarousel";
 
- function Home({slug, baseUrl}) {
+ function Home({slug, baseUrl, labels}) {
   const [api,setApi] = useState(null);
 
     useEffect(() => {
@@ -20,7 +20,7 @@ import ReviewCarousel from "../../components/ReviewCarousel/ReviewCarousel";
          <div className={'mainHome'}>  
      {api && api.data &&   <>
         <HeroHome api={api.data.hero}></HeroHome> 
-           <ReviewCarousel  api={api.data.review}/> 
+           <ReviewCarousel  api={api.data.review} labels={labels}/> 
           </> } 
         </div>
        </>

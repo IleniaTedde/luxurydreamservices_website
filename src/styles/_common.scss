@@ -12,34 +12,14 @@ p, span, h1, h2, h3, h4, h5 ,h6 {
   .largeCenteredSection {
     padding-top: 2rem;
     padding-bottom: 2rem;
-  
-    max-width: 1380px;
+    max-width: 1330px;
 
     margin-left: auto;
     margin-right: auto;
   
     @include breakpoint-under("xxl") {
-    //  max-width: 1190px;
-      max-width: 93%;
+      max-width: 90%;
     }
-  
-    // @include breakpoint-under("xl") {
-    //   max-width: 950px;
-    // }
-  
-    // @include breakpoint-under("lg") {
-    //   max-width: 630px;
-    // }
-  
-    // @include breakpoint-under("md") {
-    //   max-width: 450px;
-    // }
-  
-    // @include breakpoint-under("sm") {
-    //   width: calc(100% - 100px) !important;
-    //   margin-left: auto;
-    //   margin-right: auto;
-    // }
   }
 
 .centeredSection {
@@ -174,6 +154,12 @@ p, span, h1, h2, h3, h4, h5 ,h6 {
     }
   }
   
+  .fullMobile {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
   a {
     text-decoration: none;
     color: inherit;

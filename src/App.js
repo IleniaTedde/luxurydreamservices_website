@@ -12,12 +12,19 @@ import { setSelectionRange } from '@testing-library/user-event/dist/utils';
 
 function App() {
   //const baseUrl = `${process.env.LDS_BASEURL}`;
-
   let langStorage =  localStorage.getItem('lang');
-
+  if(langStorage === null) {
+    if(navigator.language.includes('it')) {
+      localStorage.setItem('lang', 'it');
+    }
+    else 
+    localStorage.setItem('lang', 'en');
+  }
   const baseUrl = langStorage === 'en' ? 'http://localhost:8000' : 'http://localhost:8001';
   const [data, setData] = useState(null);
   const [locale, setLocale] = useState(null);
+  const [labels, setLabels] = useState(null);
+  
   useEffect(() => {
     fetch(`${baseUrl}/layout`)
       .then(res => {
@@ -29,6 +36,15 @@ function App() {
         setLocale(langStorage);
       }
       })
+
+      fetch(`${baseUrl}/labels`)
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        setLabels(data);
+      })
+
   }, [baseUrl])
 
   //  useEffect(() => {
@@ -72,7 +88,7 @@ function App() {
               return (
                 <Route key={"route " + el.url} exact path={'/' + locale + el.url}>
                    <LuxuryLayout baseUrl={baseUrl} slug={el.slug}>
-                     <ReactCreateElement baseUrl={baseUrl} slug={el.slug}/> 
+                     <ReactCreateElement baseUrl={baseUrl} slug={el.slug} labels={labels}/> 
                      </LuxuryLayout> 
                    </Route>
             )    

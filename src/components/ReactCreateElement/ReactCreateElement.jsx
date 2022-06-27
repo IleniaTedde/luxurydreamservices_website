@@ -28,11 +28,12 @@ const Components = {
 
 }
 
-const ReactCreteElement = ({baseUrl, slug}) => {
+const ReactCreteElement = ({baseUrl, slug, labels}) => {
     return ( 
          React.createElement(Components[slug], {
            slug: slug,
            baseUrl: baseUrl,
+           labels: labels,
          })
     );
 };
