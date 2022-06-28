@@ -85,7 +85,7 @@ const Footer = ({ link, data, locale, labels, social, slugPage }) => {
                 
         {/* form */}
 
-        <div className={`${styles.formContainer} centeredSection`}>
+         <div className={`${styles.formContainer} centeredSection`}>
           {data.form && data.form.title && <div className={styles.title} dangerouslySetInnerHTML={{ __html: data.form.title }}>
           </div>}
           {data.form && data.form.subtitle && <div className={styles.subtitle} dangerouslySetInnerHTML={{ __html: data.form.subtitle }}>
@@ -173,25 +173,23 @@ const Footer = ({ link, data, locale, labels, social, slugPage }) => {
             // type="submit"
              onClick={() => sendFn()} 
              className={`${styles.send} ${send ? styles.allowed : ''}`}
-            >
+            >  
          {send && <a href={`https://formsubmit.co/${data.form.sendMail} ?subject=${data.form.subject}&cc=${data.form.cc}&body=${data.form.field.name.label}%3A%20${name}%0D%0A${data.form.field.surname.label}%3A%20${surname}%0D%0A${data.form.field.number.label}%3A%20${number}%0D%0A${data.form.field.mail.label}%3A%20${mail}%0D%0A%0D%0A--------%0D%0A${data.form.field.message.label}%3A%20%0D%0D${message}0A%0D%0A`}>{ labels && labels.send && labels.send}</a>} 
              {/* {send && <a href={`mailto:${data.form.sendMail} ?subject=${data.form.subject}&cc=${data.form.cc}&body=${data.form.field.name.label}%3A%20${name}%0D%0A${data.form.field.surname.label}%3A%20${surname}%0D%0A${data.form.field.number.label}%3A%20${number}%0D%0A${data.form.field.mail.label}%3A%20${mail}%0D%0A%0D%0A--------%0D%0A${data.form.field.message.label}%3A%20%0D%0D${message}0A%0D%0A`}>{ labels && labels.send &&  labels.send}</a>} */}
-               {!send && labels && labels.send &&  labels.send }  
+             {!send && labels && labels.send &&  labels.send }  
               {/* { labels && labels.send &&  labels.send }  */}
-            
               </button>
             </div>
           </div>
           </form>
-        </div>
+        </div> 
 
         {/* footer */}
-        <hr className={styles.linesMobile + " lines"}></hr>
+         <hr className={styles.linesMobile + " lines"}></hr>
         <div className={`${styles.interContainerMobile} centeredSection `}>
-          <div className={styles.logo}
-            key={`logo-footer`} >
+          <div className={styles.logo} >
             <a href={`/${locale}/`}>
-              {<img key={"logo header home"} className={styles.logoImg} src={logoHome} alt="logo home" />}
+              {<img key={`logo-footer-mobile`} className={styles.logoImg} src={logoHome} alt="logo home" />}
             </a>  </div>
           {(data.name || data.address || data.number) && <div className={`${styles.infoMobile} `}>
             {data.name && <li dangerouslySetInnerHTML={{ __html: data.name }}></li>}
@@ -203,10 +201,9 @@ const Footer = ({ link, data, locale, labels, social, slugPage }) => {
         <div className={`${styles.footer} centeredSection`}>
           <div className={styles.container2columns}>
             <div className={styles.interContainer}>
-              <div className={styles.logo}
-                key={`logo-footer`} >
+              <div className={styles.logo} >
                 <a href={`/${locale}/`}>
-                  {<img key={"logo header home"} className={styles.logoImg} src={logoHome} alt="logo home" />}
+                  {<img key={`logo-footer-desktop`} className={styles.logoImg} src={logoHome} alt="logo home" />}
                 </a>  </div>
             {(data.name || data.address || data.number) && <div className={styles.info}>
                 {data.name && <li dangerouslySetInnerHTML={{ __html: data.name }}></li>}
@@ -219,14 +216,13 @@ const Footer = ({ link, data, locale, labels, social, slugPage }) => {
                 if (i === 0) {
                   return
                 }
-                else
-                  return <>
-                   {d.slug && d.url && <li
-                    key={`link-footer-${i}`} >
-                    <a href={'/' + locale + d.url} target={"_self"} title={d.slug} dangerouslySetInnerHTML={{ __html: d.slug }}>
-                    </a>
-                  </li>}
-                  </>
+                else if(d.slug && d.url) {
+                return  <li
+                  key={`link-footer-${i}`}>
+                  <a href={'/' + locale + d.url} target={"_self"} title={d.slug} dangerouslySetInnerHTML={{ __html: d.slug }}>
+                  </a>
+                </li>
+                }
               })}
               {labels && labels.labelForm && <button onClick={() => scroll()}><span className={styles.labelForm} dangerouslySetInnerHTML={{ __html: labels.labelForm }}></span></button>}
             </div>
@@ -234,11 +230,11 @@ const Footer = ({ link, data, locale, labels, social, slugPage }) => {
           <div className={styles.social}>
             <Social social={social} />
           </div>
-        </div>
+        </div> 
 
         {/* low footer */}
-        <hr className="lines"></hr>
-        <div className={`${styles.lowFooter} centeredSection`}>
+         <hr className="lines"></hr>
+         <div className={`${styles.lowFooter} centeredSection`}>
           <nav>
             <p>
               <i>{new Date().getFullYear()}©Luxury Dream Services SA</i>
@@ -246,19 +242,19 @@ const Footer = ({ link, data, locale, labels, social, slugPage }) => {
             <ul className={`nav-menu ${styles.colophonMenu}`}>
               {data && data.lowFooter &&
                 data.lowFooter.length > 0 &&
-                data.lowFooter.map((d, index) => (
-                  <>
-                  { d.url && d.slug && <li
+                data.lowFooter.map((d, index) => {
+                  if(d.url && d.slug) {
+                   return <li
                     className={styles.copyItem}
                     key={`colophon-menu-${index}`}>
                     <a href={'/' + locale + d.url} target={"_self"} title={d.slug} dangerouslySetInnerHTML={{ __html: d.slug }}>
                     </a>
-                  </li>}
-                  </>
-                ))}
+                  </li>
+                  }
+       })}
             </ul>
           </nav>
-        </div>
+        </div>  
 
       </footer>
     </>

@@ -20,8 +20,7 @@ const MenuMobile = ({isOpen, navs, onClickMenuItem, locale, labels, selector, la
       setUrl(`${window.location.origin}/${lang}/`);
        };
     return (
-        <>
-        <div className={`${ styles.MenuMobile} ${isOpen ? styles.open : ''}`}>
+         <div key={'menuMobile'} className={`${ styles.MenuMobile} ${isOpen ? styles.open : ''}`}>
           <div  className={`${styles.menuMobileContainer }`}>
             <div>
            {navs &&
@@ -38,21 +37,23 @@ const MenuMobile = ({isOpen, navs, onClickMenuItem, locale, labels, selector, la
                   </span>
                 </Link> }
                  {d.items && d.items.map((sub,i) => {
-                  return  <>
-                {sub.slug && sub.url &&  <Link className={styles.menuMobileItem} key={`menumobile-${sub.slug}`} to={`${'/' + locale + sub.url}`} title={sub.slug} aria-label={sub.slug}>
+                  if(sub.slug && sub.url ) {
+                    return  <Link className={styles.menuMobileItem} key={`menumobile-${sub.slug}`} to={`${'/' + locale + sub.url}`} title={sub.slug} aria-label={sub.slug}>
                     <span onClick={onClickMenuItem}>
                     {sub.slug}
                     </span>
-                    </Link> }
-                    </>
+                    </Link> 
+                  }
                 })} 
             </div>
             }
-        
            }
           )} 
-         { labels && labels.labelForm &&  <button onClick={() => scroll()}><span className={styles.labelForm}>{labels.labelForm}</span></button> }
+          { labels && labels.labelForm &&  <button key= {'labelForm-mobile'} onClick={() => scroll()}>
+          <span className={styles.labelForm}>{labels.labelForm}</span>
+          </button> } 
            </div>
+           
            <div className={styles.flexEnd}>
             <div className={styles.languageContainer}>
            {language && language.map((el, i) => {
@@ -72,7 +73,7 @@ const MenuMobile = ({isOpen, navs, onClickMenuItem, locale, labels, selector, la
           </div>
            </div>
           </div>
-        </>
+        
 
     );
 };
