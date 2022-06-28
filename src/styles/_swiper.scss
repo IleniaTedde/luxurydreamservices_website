@@ -14,12 +14,81 @@
         width: 100% !important;
         .swiper-wrapper {
             padding-bottom: 6rem;
+            @include breakpoint-under('lg') {
+                padding-bottom: 0rem;
+            }
         }
 
         .swiper-pagination {
             position: absolute;
             padding: 1rem 0;
             margin: auto;
+            @include breakpoint-under('lg') {
+                display: none;
+            }
+    
+            .swiper-pagination-bullet  {
+                border-radius: 100% !important;
+                 width: 10px !important;
+                 height: 10px !important;
+                 margin: 0 0.5rem;
+                background-color: map.get($theme-colors, "gold") !important;
+                position: relative;
+                opacity: 1;
+            }
+            .swiper-pagination-bullet-active {
+                &::before {
+                    content: '';
+                    border-radius: 100% !important;
+                    width: 20px !important;
+                    height: 20px !important;
+                    border: 1px solid map.get($theme-colors, "gold") !important;
+                    position: absolute !important;
+                    top: -6px;
+                    left: -6px;
+                    
+                }
+    
+            }
+        }
+
+
+    &.swiper-slide-prev,
+    &.swiper-slide-next {
+      transform: translateY(-2.5rem) !important;
+
+      @include breakpoint-under("lg") {
+        transform: translateY(0rem) !important;
+      }
+
+      z-index: 2;
+
+      @include breakpoint-under("xxl") {
+        transform: translateY(-2.5rem) !important;
+      }
+
+      @include breakpoint-under("lg") {
+        transform: translateY(0rem) !important;
+      }
+    }
+    }
+
+    .reviewCarouselSwiperText {
+        width: 100% !important;
+        .swiper-wrapper {
+            @include breakpoint-under('lg'){
+                padding-bottom: 6rem;
+            }
+        }
+
+        .swiper-pagination {
+            position: absolute;
+            padding: 1rem 0;
+            margin: auto;
+            display: none;
+            @include breakpoint-under('lg') {
+                display: block;
+            }
     
             .swiper-pagination-bullet  {
                 border-radius: 100% !important;

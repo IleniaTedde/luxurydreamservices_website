@@ -26,6 +26,7 @@ const ReviewCarousel = ({api, labels}) => {
     const [mainSwiper, setMainSwiper] = useState(0);
     const [textSwiper, setTextSwiper] = useState(0);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [currentIndexText, setCurrentIndexText] = useState(0);
    const delayAutoplay = 10000;
 
    const nextSlide = () => {
@@ -42,7 +43,10 @@ const ReviewCarousel = ({api, labels}) => {
     if(currentIndex) {
       textSwiper.slideTo(currentIndex);
     }
-  }, [currentIndex])
+    else if(currentIndexText) {
+      mainSwiper.slideTo(currentIndexText);
+    }
+  }, [currentIndex, currentIndexText])
 
     return (
         <div className={`${styles.ReviewCarousel} `}>
@@ -55,7 +59,7 @@ const ReviewCarousel = ({api, labels}) => {
                 onSwiper={setMainSwiper}
                 onActiveIndexChange={(e) => setCurrentIndex(mainSwiper.activeIndex)}
                 speed={2000}
-             //   autoplay={{delay: delayAutoplay}}
+                autoplay={{delay: delayAutoplay}}
                 slidesPerView={1}
                 centeredSlides
                 centeredSlidesBounds
@@ -67,9 +71,9 @@ const ReviewCarousel = ({api, labels}) => {
                 >
                {api.slide.map((d,i) => (
                 <SwiperSlide key={'reviewSlide-' + i}>
-                  <div className={styles.image}>
-                 <img src={d.image.url} /> 
-                  </div>
+               {d.image && d.image.url && <div className={styles.image}>
+                 <img src={d.image.url}  alt={d.image.alt}/> 
+                  </div> }
                 </SwiperSlide>
                ))}
                 </Swiper>
@@ -78,22 +82,23 @@ const ReviewCarousel = ({api, labels}) => {
             draggable={true}
             effect={"fade"}
             onSwiper={setTextSwiper}
-           // onActiveIndexChange={(e) => setCurrentIndex(e.activeIndex )}
+            onActiveIndexChange={(e) => setCurrentIndexText(textSwiper.activeIndex)}
             speed={2000}
-          //  autoplay={{delay: delayAutoplay}}
+            autoplay={{delay: delayAutoplay}}
             slidesPerView={1}
             centeredSlides
             centeredSlidesBounds
             modules={[Pagination, FreeMode, EffectFade]}
             slideToClickedSlide={true}
             loop
+            pagination = {{ clickable: true, dynamicBullets: false }} 
                >
             {api.slide.map((d,i) => (
             <SwiperSlide key={'reviewSlideText-' + i}>
               <div className={styles.containerText}>
-                <div className={styles.text}>{d.text}</div>
-                <img className={styles.firma} src={firma}></img>
-                <div className={styles.label}>{labels.labelsCeo}</div>
+              {d.text &&  <div className={styles.text} dangerouslySetInnerHTML={{__html: d.text}} /> }
+              { firma && <img className={styles.firma} src={firma}></img> }
+               {labels && labels.labelsCeo && <div className={styles.label} dangerouslySetInnerHTML={{__html: labels.labelsCeo}} /> }
                   </div>
                   </SwiperSlide>
                 ))}
@@ -107,8 +112,8 @@ const ReviewCarousel = ({api, labels}) => {
           <button className={`${styles.next} nextSwiperBtn`} aria-label="next" onClick={nextSlide}>
            {arrow}
           </button>
-        </div> 
-            </div>
+          </div> 
+         </div>
           </div>
 
     );
