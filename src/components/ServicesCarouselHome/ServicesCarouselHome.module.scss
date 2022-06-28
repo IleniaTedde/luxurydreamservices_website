@@ -67,6 +67,7 @@
             text-transform: capitalize;
             position: relative;
             padding-bottom: 0.3rem;
+            cursor: pointer;
 
             &::after {
                 content: '';
@@ -119,7 +120,6 @@
         }
     }
     .carouselContainer {
-        height: 50vh;
     }
 
  }
@@ -142,7 +142,8 @@
   position: absolute;
   top: 50%;
   justify-content: space-between;
-  width: 100%;
+  width: 70%;
+  right: 3rem;
   margin: auto;
   @include breakpoint-under('lg') {
     display: none;

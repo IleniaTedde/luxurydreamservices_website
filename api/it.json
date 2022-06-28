@@ -48,12 +48,12 @@
               "url": "/servizi/holiday-ita"
             },
             {
-              "slug" : "relocation",
-              "url": "/servizi/relocation-ita"
-            },
-            {
               "slug" : "business trip",
               "url": "/servizi/business-trip-ita"
+            },
+            {
+              "slug" : "relocation",
+              "url": "/servizi/relocation-ita"
             },
             {
               "slug" : "locals",
@@ -148,7 +148,8 @@
       "labelTel" : "Tel",
       "send" : "Invia",
       "conditions":"Termini e condizioni",
-      "labelsCeo": "CEO"
+      "labelsCeo": "CEO",
+      "labelDiscoverMore": "Scopri di più"
     },
     "home": {
             "page" : "/", 
@@ -240,7 +241,57 @@
                 "cta" : {
                   "url" : "it/servizi",
                   "label" : "scopri tutti i servizi"
-                }
+                },
+                "slide": [
+                  {
+                    "image": {
+                      "url": "https://unsplash.it/430/635",
+                      "alt": "img"
+                    },
+                    "title": "Holiday",
+                    "text": " Holiday - Luxury Dream Services fulfilled my wish to experience the finest of Bali and the positive energy this island has to offer. With a made-to-measure solutions, me and my wife enjoyed our temporary house with the best support from a dedicated staff.",
+                    "link": {
+                      "url": "it/servizi/holiday-ita",
+                      "target" : "_self"
+                    }
+                  },
+                  {
+                    "image": {
+                      "url": "https://unsplash.it/g/430/635",
+                      "alt": "img"
+                    },
+                    "title": "Business trip",
+                    "text": " Business trip - Luxury Dream Services fulfilled my wish to experience the finest of Bali and the positive energy this island has to offer. With a made-to-measure solutions, me and my wife enjoyed our temporary house with the best support from a dedicated staff.",
+                    "link": {
+                      "url": "it/servizi/business-trip-ita",
+                      "target" : "_self"
+                    }
+                  },
+                  {
+                    "image": {
+                      "url": "https://unsplash.it/430/635",
+                      "alt": "img"
+                    },
+                    "title": "Relocaiton",
+                    "text": " Relocation - Luxury Dream Services fulfilled my wish to experience the finest of Bali and the positive energy this island has to offer. With a made-to-measure solutions, me and my wife enjoyed our temporary house with the best support from a dedicated staff.",
+                    "link": {
+                      "url": "it/servizi/relocation-ita",
+                      "target" : "_self"
+                    }
+                  },
+                  {
+                    "image": {
+                      "url": "https://unsplash.it/g/430/635",
+                      "alt": "img"
+                    },
+                    "title": "Locals",
+                    "text": " Locals - Luxury Dream Services fulfilled my wish to experience the finest of Bali and the positive energy this island has to offer. With a made-to-measure solutions, me and my wife enjoyed our temporary house with the best support from a dedicated staff.",
+                    "link": {
+                      "url": "it/servizi/locals-ita",
+                      "target" : "_self"
+                    }
+                  }
+                ]
               }
             }
            

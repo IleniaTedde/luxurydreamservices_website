@@ -24,29 +24,26 @@ const circle = <svg className={styles.circle} xmlns="http://www.w3.org/2000/svg"
 
 const ServicesCarouselHome = ({api, labels, layout}) => {
     const [mainSwiper, setMainSwiper] = useState(0);
-    const [textSwiper, setTextSwiper] = useState(0);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [currentIndexText, setCurrentIndexText] = useState(0);
    const delayAutoplay = 10000;
 
    const nextSlide = () => {
     mainSwiper.slideNext();
-    textSwiper.slideNext();
   };
 
   const prevSlide = () => {
     mainSwiper.slidePrev();
-    textSwiper.slidePrev();
   };
 
-  useEffect(() => {
-    if(currentIndex) {
-      textSwiper.slideTo(currentIndex);
-    }
-    else if(currentIndexText) {
-      mainSwiper.slideTo(currentIndexText);
-    }
-  }, [currentIndex, currentIndexText])
+   useEffect(() => {
+    
+      if(currentIndex) {
+        mainSwiper.slideTo(currentIndex);
+      }
+      else {
+        setCurrentIndex(1);
+      }
+   }, [currentIndex])
 
     return (
         <div className={`${styles.ServicesCarouselHome} `}>
@@ -55,14 +52,62 @@ const ServicesCarouselHome = ({api, labels, layout}) => {
                    if(e.slug === api.slugService) {
                    return <div className={styles.servicesContainer}   key={e.slug} >
                     {e.items && e.items.length > 0 && e.items.map((el, index) => {
-                        return <div className={`${styles.servicesLabel} ${index === 0 ? styles.isSelected : ''}`}><a key={'services label home' + el.slug} href={'/' + layout.locale + el.url} dangerouslySetInnerHTML={{__html: el.slug}} /></div>
+                        return <div 
+                        key={'services label home' + el.slug} 
+                        className={`${styles.servicesLabel} ${index + 1  === currentIndex ? styles.isSelected : ''}`}
+                        dangerouslySetInnerHTML={{__html: el.slug}}
+                        onClick={() => setCurrentIndex(index  + 1)}
+                        ></div>
                     })} 
                    </div> 
                    }
              })
              } 
-            <div className={`${styles.carouselContainer} ${"servicesHomeCarousel"}`}>
-                CAROUSEL 
+            <div className={`${styles.carouselContainer} ${"servicesHomeCarousel leftCenteredSection fullMobile"}`}>
+                {api.slide && api.slide.length > 0 && (
+                   <Swiper className={`${styles.swiper} servicesHomeCarouselSwiper`}
+                         draggable={true}
+                         //effect={"fade"}
+                         onSwiper={setMainSwiper}
+                         onActiveIndexChange={(e) => setCurrentIndex(mainSwiper.activeIndex)}
+                         speed={2000}
+                         autoplay={{delay: delayAutoplay}}
+                         slidesPerView={2}
+                         spaceBetween={0}
+                         centeredSlides
+                         centeredSlidesBounds
+                         modules={[Pagination, FreeMode, EffectFade]}
+                        // slideToClickedSlide={true}
+                        // navigation
+                         loop
+                        
+                         breakpoints={{
+                          968:  {
+                            slidesPerView: 1,
+                            centeredSlides: false,
+                            spaceBetween: 0,
+                            centeredSlidesBounds: false,
+                          }
+                         }}
+                         >
+                        {api.slide.map((d,i) => (
+                         <SwiperSlide key={'reviewSlide-' + i}>
+                        {d.image && d.image.url && <div className={styles.image}>
+                          <img src={d.image.url}  alt={d.image.alt}/> 
+                         
+                           </div> }
+                         </SwiperSlide>
+                        ))}
+                     </Swiper>
+                )}
+           <div className={styles.controllers + ' leftCenteredSection'}>
+          <button className={`${styles.prev} prevSwiperBtn`} aria-label="previous" onClick={prevSlide}>
+           {arrow}
+          </button>
+          <button className={`${styles.next} nextSwiperBtn`} aria-label="next" onClick={nextSlide}>
+           {arrow}
+          </button>
+          </div> 
             </div>
            {api.cta && api.cta.url && api.cta.label && <div className={styles.cta}>
              <a href={api.cta.url}  dangerouslySetInnerHTML={{__html: api.cta.label}} /></div>}

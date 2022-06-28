@@ -89,37 +89,11 @@ p, span, h1, h2, h3, h4, h5 ,h6 {
     padding-bottom: 2rem;
   
     max-width: 100%;
-    margin-left: calc(50% - 465px);
-    margin-right: 0;
+    margin-right: calc(50% - 667px);
+    margin-left: 0;
   
-    // @include breakpoint-under("xxl") {
-    //     max-width: 1100px;
-    //     margin-left: auto;
-    //     margin-right: auto;
-    // }
-  
-    // @include breakpoint-under("xl") {
-    //     max-width: 900px;
-    //     margin-left: auto;
-    //     margin-right: auto;
-    // }
-  
-    @include breakpoint-under("lg") {
-      margin-left: calc(50% - 300px);
-      margin-right: auto;
-    }
-  
-    @include breakpoint-under("md") {
-      // margin-left: calc(50% - 240px);
-      // margin-right: auto;
-      width: 100%;
-      margin-right: 0;
-      margin-left: 0;
-    }
-  
-    @include breakpoint-under("sm") {
-      //  margin-left: calc(50% - 200px);
-      // margin-right: auto;
+    @include breakpoint-under("xxl") {
+      max-width: 96.2%;
     }
   }
   
@@ -171,19 +145,7 @@ p, span, h1, h2, h3, h4, h5 ,h6 {
     background-color: transparent;
     border: none;
     color: white;
-  }
-  .fullForMobile {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  
-    @include breakpoint-under("md") {
-      max-width: 100%;
-      width: 100%;
-      margin-left: 0;
-      margin-right: 0;
-    }
-  }
-  
+  }  
 
 
   ////////@at-root@use "sass:map";
@@ -199,12 +161,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 
 .headerFixed {
   opacity: 1;
