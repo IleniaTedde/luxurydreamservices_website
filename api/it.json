@@ -233,6 +233,14 @@
                     "text": " 5 - Luxury Dream Services fulfilled my wish to experience the finest of Bali and the positive energy this island has to offer. With a made-to-measure solutions, me and my wife enjoyed our temporary house with the best support from a dedicated staff."
                   }
                 ]
+              },
+              "services": {
+                "pretitle" : "i nostri servizi",
+                "slugService" : "servizi",
+                "cta" : {
+                  "url" : "it/servizi",
+                  "label" : "scopri tutti i servizi"
+                }
               }
             }
            

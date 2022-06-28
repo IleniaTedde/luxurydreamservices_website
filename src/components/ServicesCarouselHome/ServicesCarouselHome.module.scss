@@ -1,0 +1,170 @@
+@use "sass:map";
+@import "../../styles/variables";
+@import "../../styles/media_queries";
+
+.ServicesCarouselHome {
+    margin: 0;
+    padding: 0;
+    background: map.get($theme-colors, "grey");
+    color: map.get($theme-colors, "gold");
+    @include montserrat-semi-bold;
+    font-size: 1.25rem;
+    width: 100%;
+    height: auto;
+    position: relative;
+
+    .pretitle {
+        text-transform: uppercase;
+        color: map.get($theme-colors, "dark-blue");
+        font-size: 0.938rem;
+        margin: auto;
+        width: fit-content;
+        position: relative;
+        padding: 1rem 0;
+    }
+    .cta {
+        text-transform: uppercase;
+        color: map.get($theme-colors, "dark-blue");
+        font-size: 0.875rem;
+        padding: 1rem 0;
+        margin: auto;
+        width: fit-content;
+        position: relative;
+        padding-bottom: 0.3rem;
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0%;
+            width: 20%;
+            height: 1px;
+            background-color: map.get($theme-colors, "gold");
+            transition: all .6s cubic-bezier(.19,1,.22,1);
+            @media (prefers-reduced-motion: reduce) {
+                transition: all 0s;
+                transition-delay: 0ms;
+            }
+            @include breakpoint-under('lg'){
+              display: none;
+          }
+          }
+          &:hover {
+            &::after{
+                left: 0;
+                width: 100%;
+            }
+        }
+    }
+    .servicesContainer {
+        display: flex;
+        margin: auto;
+        width: fit-content;
+        gap: 3rem;
+        padding: 1rem 0;
+        .servicesLabel {
+            @include noto-bold;
+            font-size: 1.875;
+            text-transform: capitalize;
+            position: relative;
+            padding-bottom: 0.3rem;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0%;
+                width: 0%;
+                height: 1px;
+                background-color: map.get($theme-colors, "gold");
+                transition: all .6s cubic-bezier(.19,1,.22,1);
+                @media (prefers-reduced-motion: reduce) {
+                    transition: all 0s;
+                    transition-delay: 0ms;
+                }
+                @include breakpoint-under('lg'){
+                  display: none;
+              }
+              }
+              &:hover {
+                &::after{
+                    left: 0;
+                    width: 100%;
+                }
+            }
+        }
+        .isSelected {
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0%;
+                width: 20%;
+                height: 1px;
+                background-color: map.get($theme-colors, "gold");
+                transition: all .6s cubic-bezier(.19,1,.22,1);
+                @media (prefers-reduced-motion: reduce) {
+                    transition: all 0s;
+                    transition-delay: 0ms;
+                }
+                @include breakpoint-under('lg'){
+                  display: none;
+              }
+              }
+              &:hover {
+                &::after{
+                    left: 0;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .carouselContainer {
+        height: 50vh;
+    }
+
+ }
+  
+  .desktop {
+    @include breakpoint-under('lg'){
+        display: none;
+    }
+  }
+
+  .mobile {
+    display: none;
+    @include breakpoint-under('lg'){
+        display: block;
+    }
+  }
+
+  .controllers {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  justify-content: space-between;
+  width: 100%;
+  margin: auto;
+  @include breakpoint-under('lg') {
+    display: none;
+  }
+
+  button {
+    height: 5px;
+    cursor: pointer;
+    width: 50px;
+    border: none;
+    outline: none;
+    color: map.get($theme-colors, "gold");
+    background: none;
+    z-index: 1;
+  }
+  .next {
+    transform-origin: 50% 50%;
+    transform: rotateZ(-90deg);
+  }
+
+  .prev {
+    transform-origin: 50% 50%;
+    transform: rotateZ(90deg);
+  }
+}

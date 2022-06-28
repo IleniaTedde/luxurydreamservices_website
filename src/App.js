@@ -22,6 +22,7 @@ function App() {
   }
   const baseUrl = langStorage === 'en' ? 'http://localhost:8000' : 'http://localhost:8001';
   const [data, setData] = useState(null);
+  const [layout, setLayout] = useState(null);
   const [locale, setLocale] = useState(null);
   const [labels, setLabels] = useState(null);
   
@@ -34,6 +35,7 @@ function App() {
        { data && data.routes && data.routes.link &&
         setData(data.routes.link);
         setLocale(langStorage);
+        setLayout(data);
       }
       })
 
@@ -88,7 +90,7 @@ function App() {
               return (
                 <Route key={"route " + el.url} exact path={'/' + locale + el.url}>
                    <LuxuryLayout baseUrl={baseUrl} slug={el.slug}>
-                     <ReactCreateElement baseUrl={baseUrl} slug={el.slug} labels={labels}/> 
+                     <ReactCreateElement baseUrl={baseUrl} slug={el.slug} labels={labels} layout={layout}/> 
                      </LuxuryLayout> 
                    </Route>
             )    

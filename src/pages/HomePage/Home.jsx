@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import HeroHome from "../../components/HeroHome/HeroHome";
+import ServicesCarouselHome from "../../components/ServicesCarouselHome/ServicesCarouselHome";
 import ReviewCarousel from "../../components/ReviewCarousel/ReviewCarousel";
 
- function Home({slug, baseUrl, labels}) {
+ function Home({slug, baseUrl, labels, layout}) {
   const [api,setApi] = useState(null);
 
     useEffect(() => {
@@ -19,8 +20,9 @@ import ReviewCarousel from "../../components/ReviewCarousel/ReviewCarousel";
          { api && api.seo && <title  dangerouslySetInnerHTML={{ __html: api.seo.title }}></title>  }
          <div className={'mainHome'}>  
      {api && api.data &&   <>
-        <HeroHome api={api.data.hero}></HeroHome> 
-           <ReviewCarousel  api={api.data.review} labels={labels}/> 
+        <HeroHome api={api.data.hero} labels={labels} layout={layout}/>
+        <ServicesCarouselHome api={api.data.services} labels={labels} layout={layout}/> 
+           <ReviewCarousel  api={api.data.review} labels={labels} layout={layout} /> 
           </> } 
         </div>
        </>

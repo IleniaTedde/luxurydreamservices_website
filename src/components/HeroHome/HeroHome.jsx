@@ -19,7 +19,7 @@ const arrow = <svg className={styles.arrow} xmlns="http://www.w3.org/2000/svg" w
 const circle = <svg className={styles.circle} xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
 <circle cx="28" cy="28" r="27.5" stroke="#84754E" /></svg>;
 
-const HeroHome = ({api}) => {
+const HeroHome = ({api, labels}) => {
     const [mainSwiper, setMainSwiper] = useState(0);
    const delayAutoplay = 2000;
     return (
