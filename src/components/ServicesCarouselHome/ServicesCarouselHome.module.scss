@@ -139,12 +139,11 @@
 
   .controllers {
   display: flex;
-  position: absolute;
-  top: 50%;
+  position: relative;
+  top: -24rem;
   justify-content: space-between;
   width: 70%;
-  right: 3rem;
-  margin: auto;
+  margin: 0 0 0 auto;
   @include breakpoint-under('lg') {
     display: none;
   }

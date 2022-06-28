@@ -94,7 +94,7 @@ const ServicesCarouselHome = ({api, labels, layout}) => {
                          <SwiperSlide key={'reviewSlide-' + i}>
                         {d.image && d.image.url && <div className={styles.image}>
                           <img src={d.image.url}  alt={d.image.alt}/> 
-                         
+                          <div>{i}{labels.labelDiscoverMore}</div>
                            </div> }
                          </SwiperSlide>
                         ))}
