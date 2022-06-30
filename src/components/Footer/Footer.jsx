@@ -91,7 +91,7 @@ const Footer = ({ link, data, locale, labels, social, slugPage }) => {
           {data.form && data.form.subtitle && <div className={styles.subtitle} dangerouslySetInnerHTML={{ __html: data.form.subtitle }}>
           </div>}
           
-          <form method="POST" action="mailto:ileniat98@gmail.com" encType="text/plain">
+          <form method="POST" encType="text/plain">
           <div className={styles.form}>
             <div className="col-2">
               <div className={styles.field}>

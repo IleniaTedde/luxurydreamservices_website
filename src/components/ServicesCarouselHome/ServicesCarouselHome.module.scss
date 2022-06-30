@@ -120,6 +120,40 @@
         }
     }
     .carouselContainer {
+       .swiperContainer {
+        position: relative;
+        display: flex;
+       }
+       .swiperText {
+        position: absolute;
+        left: 28%;
+        top: 0%;
+        width: 100%;
+        overflow: hidden;
+        height: fit-content;
+
+        .title {
+          @include noto-bold;
+          font-size: 12.5rem;
+          width: fit-content;
+          color: map.get($theme-colors, "gold");
+        }
+        .desc {
+          margin-top: 1rem;
+          color: map.get($theme-colors, "dark-blue");
+          font-size: 1rem;
+          max-width: 31.875rem;
+          line-height: 1.5rem;
+          width: fit-content;
+          @include montserrat-regular;
+        }
+
+        .cta {
+           margin: 0;
+           width: fit-content;
+           margin-top: 3rem;
+        }
+       }
     }
 
  }
@@ -142,7 +176,7 @@
   position: relative;
   top: -24rem;
   justify-content: space-between;
-  width: 70%;
+  width: 80%;
   margin: 0 0 0 auto;
   @include breakpoint-under('lg') {
     display: none;

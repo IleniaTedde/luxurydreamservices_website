@@ -24,26 +24,34 @@ const circle = <svg className={styles.circle} xmlns="http://www.w3.org/2000/svg"
 
 const ServicesCarouselHome = ({api, labels, layout}) => {
     const [mainSwiper, setMainSwiper] = useState(0);
+    const [textSwiper, setTextSwiper] = useState(0);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [currentIndexText, setCurrentIndexText] = useState(0);
    const delayAutoplay = 10000;
 
    const nextSlide = () => {
     mainSwiper.slideNext();
+    textSwiper.slideNext();
   };
 
   const prevSlide = () => {
     mainSwiper.slidePrev();
+    textSwiper.slidePrev();
   };
 
    useEffect(() => {
     
-      if(currentIndex) {
+      if(currentIndex ) {
+           
+     // setCurrentIndex(currentIndexText);
         mainSwiper.slideTo(currentIndex);
+        textSwiper.slideTo(currentIndex)
       }
       else {
         setCurrentIndex(1);
       }
-   }, [currentIndex])
+      
+   }, [currentIndex, currentIndexText])
 
     return (
         <div className={`${styles.ServicesCarouselHome} `}>
@@ -65,6 +73,7 @@ const ServicesCarouselHome = ({api, labels, layout}) => {
              } 
             <div className={`${styles.carouselContainer} ${"servicesHomeCarousel leftCenteredSection fullMobile"}`}>
                 {api.slide && api.slide.length > 0 && (
+                  <div className={styles.swiperContainer}>
                    <Swiper className={`${styles.swiper} servicesHomeCarouselSwiper`}
                          draggable={true}
                          //effect={"fade"}
@@ -94,20 +103,43 @@ const ServicesCarouselHome = ({api, labels, layout}) => {
                          <SwiperSlide key={'reviewSlide-' + i}>
                         {d.image && d.image.url && <div className={styles.image}>
                           <img src={d.image.url}  alt={d.image.alt}/> 
-                          <div>{i}{labels.labelDiscoverMore}</div>
                            </div> }
                          </SwiperSlide>
                         ))}
                      </Swiper>
+                         <Swiper className={`${styles.swiperText} servicesHomeCarouselSwiperText`}
+                         draggable={true}
+                         //effect={"fade"}
+                         onSwiper={setTextSwiper}
+                         onActiveIndexChange={(e) => setCurrentIndex(textSwiper.activeIndex)}
+                         speed={2000}
+                         autoplay={{delay: delayAutoplay}}
+                         slidesPerView={1}
+                         centeredSlides
+                         centeredSlidesBounds
+                         modules={[Pagination, FreeMode, EffectFade]}
+                        // slideToClickedSlide={true}
+                        // navigation
+                         loop
+                         >
+                        {api.slide.map((d,i) => (
+                         <SwiperSlide key={'reviewSlide-' + i}>
+                              <div className={styles.title} dangerouslySetInnerHTML={{__html: d.title}} /> 
+                              <div className={styles.desc} dangerouslySetInnerHTML={{__html: d.text}} />
+                            <div className={styles.cta}><a href={d.link.url}  target={d.link.target} dangerouslySetInnerHTML={{__html: labels.labelDiscoverMore}} /></div> 
+                         </SwiperSlide>
+                        ))}
+                     </Swiper>
+                     </div>
                 )}
-           <div className={styles.controllers + ' leftCenteredSection'}>
+            <div className={styles.controllers + ' leftCenteredSection'}>
           <button className={`${styles.prev} prevSwiperBtn`} aria-label="previous" onClick={prevSlide}>
            {arrow}
           </button>
           <button className={`${styles.next} nextSwiperBtn`} aria-label="next" onClick={nextSlide}>
            {arrow}
           </button>
-          </div> 
+          </div>  
             </div>
            {api.cta && api.cta.url && api.cta.label && <div className={styles.cta}>
              <a href={api.cta.url}  dangerouslySetInnerHTML={{__html: api.cta.label}} /></div>}

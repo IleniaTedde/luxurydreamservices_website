@@ -239,7 +239,7 @@
                 "pretitle" : "our services",
                 "slugService" : "services",
                 "cta" : {
-                  "url" : "en/services",
+                  "url" : "/en/services",
                   "label" : "discover all services"
                 },
                 "slide": [
@@ -251,7 +251,7 @@
                     "title": "Holiday",
                     "text": " Holiday - Luxury Dream Services fulfilled my wish to experience the finest of Bali and the positive energy this island has to offer. With a made-to-measure solutions, me and my wife enjoyed our temporary house with the best support from a dedicated staff.",
                     "link": {
-                      "url": "en/services/holiday",
+                      "url": "/en/services/holiday",
                       "target" : "_self"
                     }
                   },
@@ -263,7 +263,7 @@
                     "title": "Business trip",
                     "text": " Business trip - Luxury Dream Services fulfilled my wish to experience the finest of Bali and the positive energy this island has to offer. With a made-to-measure solutions, me and my wife enjoyed our temporary house with the best support from a dedicated staff.",
                     "link": {
-                      "url": "en/services/business-trip",
+                      "url": "/en/services/business-trip",
                       "target" : "_self"
                     }
                   },
@@ -272,10 +272,10 @@
                       "url": "https://unsplash.it/430/635",
                       "alt": "img"
                     },
-                    "title": "Relocaiton",
+                    "title": "Relocation",
                     "text": " Relocation - Luxury Dream Services fulfilled my wish to experience the finest of Bali and the positive energy this island has to offer. With a made-to-measure solutions, me and my wife enjoyed our temporary house with the best support from a dedicated staff.",
                     "link": {
-                      "url": "en/services/relocation",
+                      "url": "/en/services/relocation",
                       "target" : "_self"
                     }
                   },
@@ -287,7 +287,7 @@
                     "title": "Locals",
                     "text": " Locals - Luxury Dream Services fulfilled my wish to experience the finest of Bali and the positive energy this island has to offer. With a made-to-measure solutions, me and my wife enjoyed our temporary house with the best support from a dedicated staff.",
                     "link": {
-                      "url": "en/services/locals",
+                      "url": "/en/services/locals",
                       "target" : "_self"
                     }
                   }
