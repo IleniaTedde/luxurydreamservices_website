@@ -53,7 +53,11 @@ const HeroHome = ({api, labels}) => {
                 >
                {api.slide.map((d,i) => (
                 <SwiperSlide key={'heroHomeSlide-' + i}>
-            {d.image && d.image.url && <img src={d.image.url} alt={d.image.url} /> }
+            {d.image && d.image.url && 
+             <div className={styles.image}>
+               <img src={d.image.url} alt={d.image.url} />
+             </div>
+           }
                 </SwiperSlide> 
                ))}
                 </Swiper>
