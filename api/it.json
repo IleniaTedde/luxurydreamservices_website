@@ -149,7 +149,8 @@
       "send" : "Invia",
       "conditions":"Termini e condizioni",
       "labelsCeo": "CEO",
-      "labelDiscoverMore": "Scopri di più"
+      "labelDiscoverMore": "Scopri di più",
+      "labelFollowUs": "Seguici"
     },
     "home": {
             "page" : "/", 
@@ -289,6 +290,40 @@
                     "link": {
                       "url": "/it/servizi/locals-ita",
                       "target" : "_self"
+                    }
+                  }
+                ]
+              },
+              "socialCarousel" : {
+                "slide": [
+                  {
+                    "image": {
+                      "url": "https://unsplash.it/239/239",
+                      "alt": "img"
+                    }
+                  },
+                  {
+                    "image": {
+                      "url": "https://unsplash.it/g/239/239",
+                      "alt": "img"
+                    }
+                  },
+                  {
+                    "image": {
+                      "url": "https://unsplash.it/239/239",
+                      "alt": "img"
+                    }
+                  },
+                  {
+                    "image": {
+                      "url": "https://unsplash.it/g/239/239",
+                      "alt": "img"
+                    }
+                  },
+                  {
+                    "image": {
+                      "url": "https://unsplash.it/239/239",
+                      "alt": "img"
                     }
                   }
                 ]

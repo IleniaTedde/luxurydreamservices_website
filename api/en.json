@@ -149,7 +149,8 @@
       "send" : "Send",
       "conditions":"Terms and conditions",
       "labelsCeo": "CEO",
-      "labelDiscoverMore": "Discover more"
+      "labelDiscoverMore": "Discover more",
+      "labelFollowUs": "Seguici"
     },
     "home": {
             "page" : "/", 
@@ -289,6 +290,40 @@
                     "link": {
                       "url": "/en/services/locals",
                       "target" : "_self"
+                    }
+                  }
+                ]
+              },
+              "socialCarousel" : {
+                "slide": [
+                  {
+                    "image": {
+                      "url": "https://unsplash.it/239/239",
+                      "alt": "img"
+                    }
+                  },
+                  {
+                    "image": {
+                      "url": "https://unsplash.it/g/239/239",
+                      "alt": "img"
+                    }
+                  },
+                  {
+                    "image": {
+                      "url": "https://unsplash.it/239/239",
+                      "alt": "img"
+                    }
+                  },
+                  {
+                    "image": {
+                      "url": "https://unsplash.it/g/239/239",
+                      "alt": "img"
+                    }
+                  },
+                  {
+                    "image": {
+                      "url": "https://unsplash.it/239/239",
+                      "alt": "img"
                     }
                   }
                 ]

@@ -71,7 +71,7 @@ const ServicesCarouselHome = ({api, labels, layout}) => {
                    }
              })
              } 
-            <div className={`${styles.carouselContainer} ${"servicesHomeCarousel leftCenteredSection fullMobile"}`}>
+            <div className={`${styles.carouselContainer} ${"servicesHomeCarousel fullMobile"}`}>
                 {api.slide && api.slide.length > 0 && (
                   <div className={styles.swiperContainer}>
                    <Swiper className={`${styles.swiper} servicesHomeCarouselSwiper`}
@@ -80,8 +80,8 @@ const ServicesCarouselHome = ({api, labels, layout}) => {
                          onSwiper={setMainSwiper}
                          onActiveIndexChange={(e) => setCurrentIndex(mainSwiper.activeIndex)}
                          speed={2000}
-                         autoplay={{delay: delayAutoplay}}
-                         slidesPerView={2}
+                        // autoplay={{delay: delayAutoplay}}
+                         slidesPerView={'auto'}
                          spaceBetween={0}
                          centeredSlides
                          centeredSlidesBounds
@@ -92,9 +92,9 @@ const ServicesCarouselHome = ({api, labels, layout}) => {
                         
                          breakpoints={{
                           968:  {
-                            slidesPerView: 1,
-                            centeredSlides: false,
-                            spaceBetween: 0,
+                          //  slidesPerView: 1,
+                           // centeredSlides: false,
+                           
                             centeredSlidesBounds: false,
                           }
                          }}
@@ -113,7 +113,7 @@ const ServicesCarouselHome = ({api, labels, layout}) => {
                          onSwiper={setTextSwiper}
                          onActiveIndexChange={(e) => setCurrentIndex(textSwiper.activeIndex)}
                          speed={2000}
-                         autoplay={{delay: delayAutoplay}}
+                       //  autoplay={{delay: delayAutoplay}}
                          slidesPerView={1}
                          centeredSlides
                          centeredSlidesBounds

@@ -1,0 +1,62 @@
+@use "sass:map";
+@import "../../styles/variables";
+@import "../../styles/media_queries";
+
+.SocialCarousel {
+    margin: 0;
+    padding: 0;
+    background: map.get($theme-colors, "grey");
+    color: map.get($theme-colors, "gold");
+    @include montserrat-semi-bold;
+    font-size: 1.25rem;
+    width: 100%;
+    height: auto;
+    position: relative;
+
+    .carouselContainer {
+        .swiper {
+            filter: brightness(0.5);
+        }
+        .image {
+            position: relative;
+            width: fit-content !important;
+            height: fit-content !important;
+        }
+    }
+    .followUs {
+        width: 100%;
+        height: 100% !important;
+         position: absolute;
+         top: 0%;
+         z-index: 2;
+         color: map.get($theme-colors, "grey");
+         display: flex;
+         .followContainer {
+            width: fit-content;
+            height: fit-content;
+            margin: auto;
+
+            .label {
+                @include montserrat-semi-bold;
+                font-size: 0.875rem;
+                text-transform: uppercase;
+                letter-spacing: 2px !important;
+                padding-bottom: 0.5rem;
+            }
+         }
+    }
+
+  }
+  
+  .desktop {
+    @include breakpoint-under('lg'){
+        display: none;
+    }
+  }
+
+  .mobile {
+    display: none;
+    @include breakpoint-under('lg'){
+        display: block;
+    }
+  }
