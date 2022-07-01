@@ -28,7 +28,7 @@ const HeroHome = ({api, labels}) => {
                 <div className={styles.pretitle} dangerouslySetInnerHTML={{__html: api.pretitle}}></div></div> }
             <div className={`${styles.columnsContainer} col-3 centeredSection`}>
             <div className={styles.sx}>
-            {api.title &&   <div className={styles.title} dangerouslySetInnerHTML={{__html: api.title}}></div>}
+            {api.title &&   <div><h1 className={styles.title} dangerouslySetInnerHTML={{__html: api.title}}></h1></div>}
             {api.textLeft && <div className={`${styles.text} ${styles.desktop} `} dangerouslySetInnerHTML={{__html: api.textLeft.substring(0,122).concat( api.textLeft.length > 122 ? '...' : '')}}></div>}
             <div className={styles.containerSvg}>
               {circle}

@@ -124,7 +124,7 @@ const ServicesCarouselHome = ({api, labels, layout}) => {
                          >
                         {api.slide.map((d,i) => (
                          <SwiperSlide key={'reviewSlide-' + i}>
-                              <div className={styles.title} dangerouslySetInnerHTML={{__html: d.title}} /> 
+                              <div><h2 className={styles.title} dangerouslySetInnerHTML={{__html: d.title}} /> </div>
                               <div className={styles.desc} dangerouslySetInnerHTML={{__html: d.text}} />
                             <div className={styles.cta}><a href={d.link.url}  target={d.link.target} dangerouslySetInnerHTML={{__html: labels.labelDiscoverMore}} /></div> 
                          </SwiperSlide>
