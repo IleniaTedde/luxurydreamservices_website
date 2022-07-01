@@ -22,7 +22,7 @@ import SocialCarousel from "../../components/SocialCarousel/SocialCarousel";
          <div className={'mainHome'}>  
      {api && api.data &&   <>
         <HeroHome api={api.data.hero} labels={labels} layout={layout}/>
-        {/* <ServicesCarouselHome api={api.data.services} labels={labels} layout={layout}/>  */}
+          <ServicesCarouselHome api={api.data.services} labels={labels} layout={layout}/> 
            <ReviewCarousel  api={api.data.review} labels={labels} layout={layout} />
            <SocialCarousel api={api.data.socialCarousel} labels={labels} layout={layout} />
           </> } 

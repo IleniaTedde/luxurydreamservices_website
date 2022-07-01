@@ -216,22 +216,3 @@
         }
     }
 }
-
-.socialCarousel {
-    .swiper {
-        top: 0.4rem !important;
-    }
-    .swiper-slide {
-        width: fit-content !important;
-        height: fit-content !important;
-        @include breakpoint-under('md'){
-            width: 30vw !important;
-        }
-        img {
-            width: 100% !important;
-            overflow: hidden;
-            transform-origin: 50% 50%;
-
-        }
-    }
-}
