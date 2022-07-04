@@ -177,9 +177,9 @@ body {
   background-color: map.get($theme-colors, "dark-blue");
   & > div:last-child {
     position: relative;
-    padding-top: 10rem;
+    padding-top: 9rem;
     @include breakpoint-under('lg'){
-      padding-top: 9rem;
+      padding-top: 5.9rem;
     }
   }
  }

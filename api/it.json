@@ -150,7 +150,8 @@
       "conditions":"Termini e condizioni",
       "labelsCeo": "CEO",
       "labelDiscoverMore": "Scopri di più",
-      "labelFollowUs": "Seguici"
+      "labelFollowUs": "Seguici",
+      "labelReadMore": "Read more"
     },
     "home": {
             "page" : "/", 
@@ -350,7 +351,11 @@
               "title": "Servizi | Luxury dream services"
             },
             "data" : {
-              "text" :  "pagina servizi"
+              "hero" : {
+                "up": "Niente è più bello che realizzare le proprie visioni. Per questo ci siamo noi.",
+                "center" : "<p>LDS è al tuo fianco nell’immaginazione e nell’organizzazione di esperienze che faranno avverare i tuoi desideri. Momenti unici e preziosi, per te o in compagnia degli altri, per tornare a celebrare quello che più conta nella vita.</p><p>Una cena intima nella scenografia di un capolavoro artistico solitamente inaccessibile, un party avvolto da un’aura leggendaria, un caffè a tu per tu con il tuo regista del cuore, un soggiorno in un castello da favola o un acquisto che porterai sempre con te come un tesoro.</p>",
+                "down": "Sfoglia i nostri servizi tenendo a mente che amiamo soddisfare le tue richieste specifiche con soluzioni tailor-made."
+              }
             }
       
             },

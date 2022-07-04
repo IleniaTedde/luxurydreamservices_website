@@ -1,0 +1,48 @@
+@use "sass:map";
+@import "../../styles/variables";
+@import "../../styles/media_queries"; 
+
+.HeroServicesArchive {
+    background: map.get($theme-colors, "dark-blue");
+    margin: 0;
+    padding: 0;
+
+    .container {
+        font-size: 0.938rem;
+        @include montserrat-regular;
+        line-height: 1.5rem;
+         .gold {
+            color: map.get($theme-colors, "gold");
+         }
+    
+         .white {
+            color: map.get($theme-colors, "grey");
+            padding-bottom: 1.5rem;
+         }
+         .containerReadMore {
+            padding: 2rem 0;
+            display: none;
+            @include breakpoint-under('lg') {
+               display: flex;
+           }
+            justify-content: end;
+            .readMore {
+               text-transform: uppercase;
+               @include montserrat-semi-bold;
+               letter-spacing: 2px;
+               font-size: 0.813rem;
+               padding-right: 0.5rem;
+            }
+            .icon {
+              margin: auto 0 ;
+              svg path {
+               stroke:  map.get($theme-colors, "gold") !important;
+              }
+            }
+         }
+
+         p {
+            padding-top: 1.5rem;
+         }
+    }
+}

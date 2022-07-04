@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from "react";
 import Breadcrumb from "../../components/Breadrumb/Breadcrumb";
+import HeroServicesArchive from "../../components/HeroServicesArchive/HeroServicesArchive";
 const Services = ({ slug, baseUrl, labels }) => {
     
     const [api, setApi] = useState(null);
@@ -29,10 +30,11 @@ const Services = ({ slug, baseUrl, labels }) => {
     return (
         <>
             {api && api.seo && <title dangerouslySetInnerHTML={{ __html: api.seo.title }} />}
-            <div>    {api && api.data && 
+            <div>   
+              {api && api.data && 
             <>
-             <h2>{api.data.text}</h2>
-              { link && link.length > 0 && link.map((e,i) => {
+            <HeroServicesArchive api={api.data.hero} labels={labels}/>
+         { link && link.length > 0 && link.map((e,i) => {
                    if(e.slug === slugPage) {
                    return <div key={'sub' + e} >
                     {e.items && e.items.length > 0 && e.items.map((el, index) => {
